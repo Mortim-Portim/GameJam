@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Sprung-Sound1.mp3-1823866514e74ad2366d2b3941ac185a.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

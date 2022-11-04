@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/background/background one colour.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/background spikes 2.png" type="Texture" id=2]
 
 [sub_resource type="Gradient" id=1]
 
@@ -7,6 +10,10 @@ gradient = SubResource( 1 )
 width = 1000
 height = 1000
 fill_to = Vector2( 1, 1 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/background spikes 1.png-488ed414a85ea647dca439e8e1b5585e.stex"
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -18,3 +25,17 @@ position = Vector2( 1014, 1003.5 )
 scale = Vector2( 3, 3 )
 texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 1000, 1000 )
+
+[node name="BackgroundOneColour" type="Sprite" parent="ParallaxLayer/Sprite"]
+position = Vector2( 647, 174.501 )
+texture = ExtResource( 1 )
+
+[node name="BackgroundSpikes1" type="Sprite" parent="ParallaxLayer/Sprite"]
+position = Vector2( 647, 36.501 )
+scale = Vector2( 0.999997, 1 )
+texture = SubResource( 3 )
+
+[node name="BackgroundSpikes2" type="Sprite" parent="ParallaxLayer/Sprite"]
+position = Vector2( 647, -107.5 )
+scale = Vector2( 0.999997, 1 )
+texture = ExtResource( 2 )

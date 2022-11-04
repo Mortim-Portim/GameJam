@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 export var active = true
 export var GRAVITY = -24.8
@@ -50,9 +50,12 @@ func process_movement(delta):
 	var target_vel = dir*MAX_SPEED
 	target_vel.y = vel.y
 	
+	var accel = ACCEL
 	if dir.length_squared() < 0.5:
-		
+		accel = DEACCEL
 	
+	vel = vel.linear_interpolate(target_vel, accel*delta)
+	vel = move_and_slide(vel, Vector2.UP)
 
 func _on_jump_start():
 	print("jump start")

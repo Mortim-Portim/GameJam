@@ -2,4 +2,4 @@
 
 [node name="Main" type="Node"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="dfgcnf" type="Node2D" parent="."]

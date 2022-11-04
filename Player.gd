@@ -33,13 +33,13 @@ func process_input(delta):
 		if grounded():
 			jumping = false
 			left_ground = false
+			_on_jump_end()
 	if grounded() and !jumping:
-		print("may jump")
 		if Input.is_action_just_pressed("jump"):
-			print("jump")
 			vel.y = -JUMP_SPEED
 			jumping = true
 			left_ground = false
+			_on_jump_start()
 
 func process_movement(delta):
 	if !grounded():

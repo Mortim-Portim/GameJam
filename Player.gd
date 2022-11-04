@@ -12,9 +12,7 @@ var vel = Vector2.ZERO
 var jumping = false
 var left_ground = false
 var running = false
-
-func _ready():
-	randomize()
+var was_running = false
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding()
@@ -66,12 +64,17 @@ func process_movement(delta):
 
 func _on_jump_start():
 	print("jump start")
+	was_running = running
+	if running:
+		_on_running_end()
 	if randi()%2 == 0:
 		$JumpSound1.play()
 	else:
 		$JumpSound2.play()
 
 func _on_jump_end():
+	if was_running:
+		_on_running_start()
 	print("jump end")
 
 func _on_running_start():

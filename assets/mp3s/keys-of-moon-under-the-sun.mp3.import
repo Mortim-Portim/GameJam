@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/keys-of-moon-under-the-sun.mp3-e94f47bd99cba7e04bef5892d154c71d.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/keys-of-moon-under-the-sun.mp3"
+dest_files=[ "res://.import/keys-of-moon-under-the-sun.mp3-e94f47bd99cba7e04bef5892d154c71d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

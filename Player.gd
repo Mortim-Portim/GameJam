@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 export var active = true
-export var GRAVITY = -24.8
-export var MAX_SPEED = 9
-export var JUMP_SPEED = 10
-export var ACCEL = 2.5
-export var DEACCEL= 14
+export var GRAVITY = 700
+export var MAX_SPEED = 400
+export var JUMP_SPEED = 600
+export var ACCEL = 10
+export var DEACCEL= 40
 
 var dir = Vector2.LEFT
 var vel = Vector2.ZERO
@@ -13,11 +13,7 @@ var jumping = false
 var left_ground = false
 
 func grounded():
-	var bodies = $Area2D.get_overlapping_bodies()
-	for body in bodies:
-		if body.get_groups().has("Ground"):
-			return true
-	return false
+	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding()
 
 func _physics_process(delta):
 	if active:
@@ -38,8 +34,10 @@ func process_input(delta):
 			jumping = false
 			left_ground = false
 	if grounded() and !jumping:
+		print("may jump")
 		if Input.is_action_just_pressed("jump"):
-			vel.y = JUMP_SPEED
+			print("jump")
+			vel.y = -JUMP_SPEED
 			jumping = true
 			left_ground = false
 
@@ -53,9 +51,9 @@ func process_movement(delta):
 	var accel = ACCEL
 	if dir.length_squared() < 0.5:
 		accel = DEACCEL
-	
-	vel = vel.linear_interpolate(target_vel, accel*delta)
-	vel = move_and_slide(vel, Vector2.UP)
+	var n_vel = vel.linear_interpolate(target_vel, accel*delta)
+	n_vel.y = vel.y
+	vel = move_and_slide(n_vel, Vector2.UP)
 
 func _on_jump_start():
 	print("jump start")

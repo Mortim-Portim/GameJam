@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Walk-Sound Loopable.mp3-758b6335fbced2a477abe7fbf79e534d.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Walk-Sound Loopable.mp3"
+dest_files=[ "res://.import/Walk-Sound Loopable.mp3-758b6335fbced2a477abe7fbf79e534d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

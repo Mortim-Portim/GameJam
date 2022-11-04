@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Lauf-Sound-Schwamm-Loopable.mp3-9b6ccca873fbb22019b104ab75411a15.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Lauf-Sound-Schwamm-Loopable.mp3"
+dest_files=[ "res://.import/Lauf-Sound-Schwamm-Loopable.mp3-9b6ccca873fbb22019b104ab75411a15.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

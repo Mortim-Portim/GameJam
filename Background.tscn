@@ -11,15 +11,14 @@ load_path = "res://.import/background spikes 1.png-488ed414a85ea647dca439e8e1b55
 
 [node name="BackgroundOneColour" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
-scale = Vector2( 1.43333, 1.82963 )
 texture = ExtResource( 1 )
 
-[node name="BackgroundSpikes1" type="Sprite" parent="BackgroundOneColour"]
-position = Vector2( 0, -75.4251 )
-scale = Vector2( 0.697674, 0.546559 )
+[node name="BackgroundSpikes1" type="Sprite" parent="."]
+position = Vector2( 960, 402 )
+scale = Vector2( 0.999997, 1 )
 texture = SubResource( 1 )
 
-[node name="BackgroundSpikes2" type="Sprite" parent="BackgroundOneColour"]
-position = Vector2( 0, -154.13 )
-scale = Vector2( 0.697674, 0.546559 )
+[node name="BackgroundSpikes2" type="Sprite" parent="."]
+position = Vector2( 960, 257.999 )
+scale = Vector2( 0.999997, 1 )
 texture = ExtResource( 2 )

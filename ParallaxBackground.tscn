@@ -28,3 +28,11 @@ motion_mirroring = Vector2( 1920, 0 )
 [node name="BgSpikes2" type="Sprite" parent="Back3"]
 position = Vector2( 960, -296 )
 texture = ExtResource( 2 )
+
+[node name="BgSpikes3" type="Sprite" parent="Back3"]
+position = Vector2( 960, -516 )
+texture = ExtResource( 2 )
+
+[node name="BgSpikes4" type="Sprite" parent="Back3"]
+position = Vector2( 960, -740 )
+texture = ExtResource( 2 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/background/background one colour.png" type="Texture" id=1]
 [ext_resource path="res://assets/background/background spikes 2.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/level blocks/block 1 mirrored.png" type="Texture" id=4]
 [ext_resource path="res://assets/level blocks/block 2 mirrored.png" type="Texture" id=5]
 [ext_resource path="res://assets/level blocks/block 2.png" type="Texture" id=6]
+[ext_resource path="res://assets/umgebung/lampe.png" type="Texture" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -68,6 +69,20 @@ load_path = "res://.import/background spikes 1.png-488ed414a85ea647dca439e8e1b55
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
+4/name = "lampe.png 4"
+4/texture = ExtResource( 7 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -89,3 +104,4 @@ texture = ExtResource( 2 )
 position = Vector2( 960, 540 )
 tile_set = SubResource( 4 )
 format = 1
+tile_data = PoolIntArray( -65546, 4, 0, -65545, 4, 0, -65544, 4, 0, -65543, 4, 0, -65542, 4, 0, -10, 4, 0, -9, 4, 0, -8, 4, 0, -7, 4, 0, -6, 4, 0, 65529, 4, 0, 65530, 4, 0, 65533, 4, 0, 65534, 4, 0, 131067, 4, 0, 131070, 3, 0, 196601, 4, 0, 196602, 4, 0, 196605, 4, 0, 196606, 3, 0, 262136, 4, 0, 262140, 4, 0, 262141, 4, 0, 262142, 0, 0, 327673, 4, 0, 327674, 4, 0, 327675, 4, 0, 327676, 4, 0, 327677, 4, 0, 327678, 4, 0, 393211, 4, 0, 393212, 4, 0, 393213, 4, 0, 393214, 4, 0 )

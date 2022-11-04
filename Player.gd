@@ -13,6 +13,9 @@ var jumping = false
 var left_ground = false
 var running = false
 
+func _ready():
+	randomize()
+
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding()
 

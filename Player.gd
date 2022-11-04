@@ -26,6 +26,10 @@ func process_input(delta):
 		dir += Vector2.LEFT
 	if Input.is_action_pressed("move_right"):
 		dir += Vector2.RIGHT
+	if !dir.is_equal_approx(Vector2.ZERO):
+		$RunningSound.play()
+	else:
+		$RunningSound.stop()
 	
 	if jumping and !left_ground:
 		left_ground = !grounded()
@@ -42,8 +46,7 @@ func process_input(delta):
 			_on_jump_start()
 
 func process_movement(delta):
-	if !grounded():
-		vel.y += delta * GRAVITY
+	vel.y += delta * GRAVITY
 	
 	var target_vel = dir*MAX_SPEED
 	target_vel.y = vel.y

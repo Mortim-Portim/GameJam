@@ -35,18 +35,19 @@ smoothing_enabled = true
 editor_draw_drag_margin = true
 
 [node name="GroundChecker1" type="RayCast2D" parent="."]
-position = Vector2( 32, 0 )
+position = Vector2( 32, -20 )
 enabled = true
-cast_to = Vector2( 0, 10 )
+cast_to = Vector2( 0, 30 )
 collision_mask = 8
 
 [node name="GroundChecker2" type="RayCast2D" parent="."]
-position = Vector2( -32, 0 )
+position = Vector2( -32, -20 )
 enabled = true
-cast_to = Vector2( 0, 10 )
+cast_to = Vector2( 0, 30 )
 collision_mask = 8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -3, -38 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 5 )

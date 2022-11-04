@@ -60,7 +60,7 @@ func process_movement(delta):
 		accel = DEACCEL
 	var n_vel = vel.linear_interpolate(target_vel, accel*delta)
 	n_vel.y = vel.y
-	vel = move_and_slide(n_vel, Vector2.UP)
+	vel = move_and_slide(n_vel, Vector2.UP, false, 4, 0.78, true)
 
 func _on_jump_start():
 	was_running = running

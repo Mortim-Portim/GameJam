@@ -3,10 +3,10 @@
 [ext_resource path="res://Stalagtite.gd" type="Script" id=1]
 
 [node name="Stalagtite" type="RigidBody2D" groups=["Killer"]]
-collision_layer = 5
+collision_layer = 13
 mode = 1
-mass = 65535.0
-gravity_scale = 2.0
+mass = 1000.0
+gravity_scale = 5.0
 script = ExtResource( 1 )
 
 [node name="Shape1" type="CollisionPolygon2D" parent="."]

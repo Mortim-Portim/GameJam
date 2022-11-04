@@ -63,7 +63,6 @@ func process_movement(delta):
 	vel = move_and_slide(n_vel, Vector2.UP)
 
 func _on_jump_start():
-	print("jump start")
 	was_running = running
 	if running:
 		_on_running_end()
@@ -75,10 +74,14 @@ func _on_jump_start():
 func _on_jump_end():
 	if was_running:
 		_on_running_start()
-	print("jump end")
 
 func _on_running_start():
 	$AnimatedSprite.play("idle")
 	$RunningSound.play()
 func _on_running_end():
 	$RunningSound.stop()
+
+
+func _on_Hitbox_area_entered(area):
+	if area.get_groups().has("Killer"):
+		print("Killed")

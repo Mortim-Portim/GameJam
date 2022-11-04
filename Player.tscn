@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 
@@ -14,9 +14,6 @@ colors = PoolColorArray( 0.535156, 0.535156, 0.535156, 1 )
 gradient = SubResource( 1 )
 width = 100
 
-[sub_resource type="CapsuleShape2D" id=3]
-height = 76.0
-
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -29,17 +26,19 @@ position = Vector2( 0, -50 )
 scale = Vector2( 1, 100 )
 texture = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
-monitorable = false
-gravity = 0.0
-linear_damp = 0.0
-angular_damp = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = 1.5708
-shape = SubResource( 3 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
 editor_draw_drag_margin = true
+
+[node name="GroundChecker1" type="RayCast2D" parent="."]
+position = Vector2( 32, 0 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 8
+
+[node name="GroundChecker2" type="RayCast2D" parent="."]
+position = Vector2( -32, 0 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 8

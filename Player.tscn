@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/Sprung-Sound2.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/Sprung-Sound1.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 48.0
@@ -13,6 +16,14 @@ colors = PoolColorArray( 0.535156, 0.535156, 0.535156, 1 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 width = 100
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -42,3 +53,18 @@ position = Vector2( -32, 0 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 collision_mask = 8
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+
+[node name="JumpSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 2.0
+
+[node name="JumpSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 10.0
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

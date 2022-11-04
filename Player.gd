@@ -57,7 +57,10 @@ func process_movement(delta):
 
 func _on_jump_start():
 	print("jump start")
-	pass
+	if randi()%2 == 0:
+		$JumpSound1.play()
+	else:
+		$JumpSound2.play()
 
 func _on_jump_end():
 	print("jump end")

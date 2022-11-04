@@ -11,6 +11,7 @@ var dir = Vector2.LEFT
 var vel = Vector2.ZERO
 var jumping = false
 var left_ground = false
+var running = false
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding()
@@ -26,12 +27,12 @@ func process_input(delta):
 		dir += Vector2.LEFT
 	if Input.is_action_pressed("move_right"):
 		dir += Vector2.RIGHT
-	if !dir.is_equal_approx(Vector2.ZERO):
-		$RunningSound.play()
-		$AnimatedSprite.play("idle")
-	else:
-		$RunningSound.stop()
-		$AnimatedSprite.play("idle")
+	if !running and !dir.is_equal_approx(Vector2.ZERO):
+		running = true
+		_on_running_start()
+	if running and dir.is_equal_approx(Vector2.ZERO):
+		running = false
+		_on_running_end()
 	
 	if jumping and !left_ground:
 		left_ground = !grounded()
@@ -69,4 +70,9 @@ func _on_jump_start():
 
 func _on_jump_end():
 	print("jump end")
-	pass
+
+func _on_running_start():
+	$AnimatedSprite.play("idle")
+	$RunningSound.play()
+func _on_running_end():
+	$RunningSound.stop()

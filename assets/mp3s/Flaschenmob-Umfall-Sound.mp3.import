@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Flaschenmob-Umfall-Sound.mp3-08c92a8c30367ba700a36755390b582b.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Flaschenmob-Umfall-Sound.mp3"
+dest_files=[ "res://.import/Flaschenmob-Umfall-Sound.mp3-08c92a8c30367ba700a36755390b582b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

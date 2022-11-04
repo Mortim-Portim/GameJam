@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menü-Klick-Sound.wav-aa3367039c3c89d1dd94e022481fa9d8.sample"
+
+[deps]
+
+source_file="res://assets/Menü-Klick-Sound.wav"
+dest_files=[ "res://.import/Menü-Klick-Sound.wav-aa3367039c3c89d1dd94e022481fa9d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

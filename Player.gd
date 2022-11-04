@@ -28,8 +28,10 @@ func process_input(delta):
 		dir += Vector2.RIGHT
 	if !dir.is_equal_approx(Vector2.ZERO):
 		$RunningSound.play()
+		$AnimatedSprite.play("idle")
 	else:
 		$RunningSound.stop()
+		$AnimatedSprite.play("idle")
 	
 	if jumping and !left_ground:
 		left_ground = !grounded()

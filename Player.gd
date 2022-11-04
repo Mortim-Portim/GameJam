@@ -84,4 +84,12 @@ func _on_running_end():
 
 func _on_Hitbox_area_entered(area):
 	if area.get_groups().has("Killer"):
-		print("Killed")
+		kill()
+
+
+func _on_Hitbox_body_entered(body):
+	if body.get_groups().has("Killer"):
+		kill()
+
+func kill():
+	print("Killed")

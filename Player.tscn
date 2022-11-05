@@ -146,7 +146,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -194,6 +194,16 @@ stream = ExtResource( 35 )
 
 [node name="ToGasSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 34 )
+
+[node name="CeillingChecker1" type="RayCast2D" parent="."]
+position = Vector2( -25, -80 )
+enabled = true
+cast_to = Vector2( 0, -21 )
+
+[node name="CeillingChecker2" type="RayCast2D" parent="."]
+position = Vector2( 25, -80 )
+enabled = true
+cast_to = Vector2( 0, -21 )
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/level/Block 2.png" type="Texture" id=1]
 [ext_resource path="res://assets/level/Under block 2.png" type="Texture" id=2]
@@ -25,6 +25,10 @@
 [ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/mp3s/Stalaktit-Ground-Hit-Sound.mp3" type="AudioStream" id=25]
+[ext_resource path="res://assets/background/r1.png" type="Texture" id=26]
+[ext_resource path="res://assets/background/t1.png" type="Texture" id=27]
+[ext_resource path="res://assets/level/box1.jpg" type="Texture" id=28]
+[ext_resource path="res://assets/background/box2.jpg" type="Texture" id=29]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -505,12 +509,14 @@ position = Vector2( 5348, 1194 )
 scale = Vector2( 1.63, 1 )
 
 [node name="Ground9" parent="Grounds" instance=ExtResource( 11 )]
-position = Vector2( 5540, 1130 )
+position = Vector2( 5420, 1075 )
 scale = Vector2( 0.991, 1 )
+z_index = 1
 
 [node name="Ground10" parent="Grounds" instance=ExtResource( 11 )]
-position = Vector2( 5604, 1066 )
+position = Vector2( 5540, 1010 )
 scale = Vector2( 0.997, 1 )
+z_index = 1
 
 [node name="Ground11" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 5731, 909 )
@@ -541,5 +547,48 @@ stream = ExtResource( 21 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 23 )]
 scroll_base_offset = Vector2( 0, 400 )
+
+[node name="extra stuff" type="Node2D" parent="."]
+
+[node name="Box1" type="Sprite" parent="extra stuff"]
+position = Vector2( 5381, 1035 )
+scale = Vector2( 0.0400097, 0.0400097 )
+texture = ExtResource( 28 )
+
+[node name="Box2" type="Sprite" parent="extra stuff"]
+position = Vector2( 5505, 970 )
+scale = Vector2( 0.043, 0.04 )
+texture = ExtResource( 28 )
+
+[node name="Box3" type="Sprite" parent="extra stuff"]
+position = Vector2( 5307, 1051 )
+scale = Vector2( 0.03, 0.03 )
+z_index = -2
+texture = ExtResource( 29 )
+
+[node name="Box4" type="Sprite" parent="extra stuff"]
+position = Vector2( 5437, 932 )
+scale = Vector2( 0.03, 0.03 )
+z_index = -2
+texture = ExtResource( 29 )
+
+[node name="Box5" type="Sprite" parent="extra stuff"]
+position = Vector2( 5525, 870 )
+scale = Vector2( 0.03, 0.03 )
+z_index = -2
+texture = ExtResource( 29 )
+
+[node name="T1" type="Sprite" parent="extra stuff"]
+position = Vector2( 4558, 1088 )
+rotation = -0.656244
+scale = Vector2( 0.0223854, 0.0223854 )
+texture = ExtResource( 27 )
+
+[node name="R1" type="Sprite" parent="."]
+position = Vector2( 4558, 1080 )
+rotation = 1.09258
+scale = Vector2( 0.0434214, 0.0456719 )
+z_index = 3
+texture = ExtResource( 26 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]

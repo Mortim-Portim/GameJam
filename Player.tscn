@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anims/Idle_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://assets/anims/Walk_Wasser_big_boi/Unbenanntes_Projekt-1.png" type="Texture" id=15]
 [ext_resource path="res://assets/anims/Walk_Eis/Unbenanntes_Projekt-2.png" type="Texture" id=16]
 [ext_resource path="res://assets/anims/Walk_Wasser_big_boi/Unbenanntes_Projekt-3.png" type="Texture" id=17]
+[ext_resource path="res://assets/mp3s/Death-Sound.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/mp3s/Spawn-Sound.mp3" type="AudioStream" id=19]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 45.0111
@@ -120,6 +122,12 @@ frame = 2
 [node name="JumpSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = 2.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="SpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
 
 [node name="JumpSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/mp3s/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/GUI/back3.jpg" type="Texture" id=11]
 [ext_resource path="res://assets/GUI/back1.jpg" type="Texture" id=12]
 [ext_resource path="res://assets/GUI/back2.jpg" type="Texture" id=13]
+[ext_resource path="res://assets/mp3s/Main-Menü-Music.mp3" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -34,7 +35,10 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
+<<<<<<< HEAD
 frame = 2
+=======
+>>>>>>> bb5307b88a76a100a42d31e4e00f71fc65d89b01
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -87,10 +91,16 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 6 )
 
-[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+[node name="MainMenuSoundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 autoplay = true
+
+[node name="InGameSoundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Fade" type="Tween" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/MMenu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/MMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="CanvasLayer/MMenu/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="tween_all_completed" from="Fade" to="." method="_on_Fade_tween_all_completed"]

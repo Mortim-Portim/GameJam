@@ -62,7 +62,6 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -120,7 +119,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]

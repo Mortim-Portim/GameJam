@@ -712,6 +712,9 @@ stalagtit_path = NodePath("../Stalagtite")
 [node name="WaterTPer" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1026, 965 )
 
+[node name="WaterTPer" parent="WaterTPer" instance=ExtResource( 8 )]
+position = Vector2( -468, 0 )
+
 [node name="Schwamm" parent="." instance=ExtResource( 35 )]
 position = Vector2( 1944, 748 )
 player_path = NodePath("../Player")

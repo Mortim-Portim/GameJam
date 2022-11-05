@@ -64,6 +64,7 @@ Aspect: keep"
 size = Vector2( 1920, 1080 )
 size_override_stretch = true
 hdr = false
+audio_listener_enable_2d = true
 shadow_atlas_quad_0 = 0
 shadow_atlas_quad_1 = 0
 shadow_atlas_quad_2 = 0

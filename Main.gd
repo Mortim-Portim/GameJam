@@ -60,7 +60,8 @@ func _on_BackToMenu_pressed():
 func _on_TextureButton_pressed():
 	var lvl = DebugLevel.instance()
 	lvl.name = "Level"+String(level_nr)
-	add_child(lvl)
+	add_world_to_scene(lvl)
+	lvl.initialize(0)
 	lvl.connect("finished", self, "_on_level_finished")
 	lvl.connect("reload", self, "_on_level_reload")
 	in_game = true

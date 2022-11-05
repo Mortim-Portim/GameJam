@@ -41,10 +41,6 @@ position = Vector2( -1.52588e-05, -1.52588e-05 )
 scale = Vector2( 0.153565, 0.153565 )
 frames = SubResource( 2 )
 animation = "idle"
-<<<<<<< HEAD
-frame = 1
-=======
->>>>>>> 394b0772000bb60f493480a092097c21c19b38f3
 playing = true
 
 [node name="Right" type="RayCast2D" parent="."]

@@ -510,3 +510,7 @@ scale = Vector2( 2.685, 6.68 )
 [node name="Ground14" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 2140, 1130 )
 scale = Vector2( 2.685, 1 )
+
+[node name="Ground4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -107, 941 )
+scale = Vector2( 2.685, 9.96 )

@@ -113,32 +113,27 @@ editor_draw_drag_margin = true
 position = Vector2( 30, -20 )
 enabled = true
 cast_to = Vector2( -6, 22 )
-collision_mask = 8
 
 [node name="WallChecker1" type="RayCast2D" parent="."]
 position = Vector2( -44, -46 )
 enabled = true
 cast_to = Vector2( -2, 21 )
-collision_mask = 8
 
 [node name="WallChecker2" type="RayCast2D" parent="."]
 position = Vector2( 44, -46 )
 enabled = true
 cast_to = Vector2( 2, 21 )
-collision_mask = 8
 
 [node name="GroundChecker2" type="RayCast2D" parent="."]
 position = Vector2( -30, -20 )
 enabled = true
 cast_to = Vector2( 6, 22 )
-collision_mask = 8
 
 [node name="GroundChecker3" type="RayCast2D" parent="."]
 position = Vector2( -24, 2 )
 rotation = -1.57079
 enabled = true
 cast_to = Vector2( 0.000301242, 48 )
-collision_mask = 8
 
 [node name="WaterSprite" type="AnimatedSprite" parent="."]
 visible = false
@@ -146,6 +141,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]

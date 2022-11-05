@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/mp3s/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://assets/GUI/Play2.png" type="Texture" id=3]
+[ext_resource path="res://assets/GUI/Play1.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/credits1.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUI/credits2.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUI/Main_screen2.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUI/Main_screen1.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUI/Settings2.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUI/Settings1.png" type="Texture" id=10]
+[ext_resource path="res://assets/GUI/back3.jpg" type="Texture" id=11]
+[ext_resource path="res://assets/GUI/back1.jpg" type="Texture" id=12]
+[ext_resource path="res://assets/GUI/back2.jpg" type="Texture" id=13]
 
-[sub_resource type="Gradient" id=2]
-
-[sub_resource type="GradientTexture2D" id=1]
-gradient = SubResource( 2 )
-fill_from = Vector2( 1, 0 )
-fill_to = Vector2( 0, 1 )
-
-[sub_resource type="Gradient" id=3]
-
-[sub_resource type="GradientTexture2D" id=4]
-gradient = SubResource( 3 )
-
-[sub_resource type="Gradient" id=5]
-
-[sub_resource type="GradientTexture2D" id=6]
-gradient = SubResource( 5 )
-fill_to = Vector2( 0.150862, 1 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -30,37 +31,63 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MMenu"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
+position = Vector2( 960, 540 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 7 )
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/MMenu/MainScreen2"]
+margin_left = 96.0
+margin_top = -270.0
+margin_right = 240.0
+margin_bottom = -180.0
+texture_hover = ExtResource( 8 )
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -32.0
-margin_top = -100.0
-margin_right = 32.0
-margin_bottom = 100.0
+margin_left = 759.0
+margin_top = -513.0
+margin_right = 919.0
+margin_bottom = -356.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
 
-[node name="Play" type="TextureButton" parent="CanvasLayer/MMenu/VBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
-texture_normal = SubResource( 1 )
+[node name="Play" type="TextureButton" parent="CanvasLayer/MMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.5
+margin_top = 68.5
+margin_right = 95.5
+margin_bottom = 257.5
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
 
-[node name="Settings" type="TextureButton" parent="CanvasLayer/MMenu/VBoxContainer"]
-margin_top = 68.0
-margin_right = 64.0
-margin_bottom = 132.0
-texture_normal = SubResource( 4 )
-
-[node name="Credits" type="TextureButton" parent="CanvasLayer/MMenu/VBoxContainer"]
-margin_top = 136.0
-margin_right = 64.0
-margin_bottom = 200.0
-texture_normal = SubResource( 6 )
+[node name="Credits" type="TextureButton" parent="CanvasLayer/MMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -302.0
+margin_top = 294.5
+margin_right = 302.0
+margin_bottom = 453.5
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 autoplay = true
 
-[connection signal="pressed" from="CanvasLayer/MMenu/VBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="CanvasLayer/MMenu/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/MMenu/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/MMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/MMenu/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="CanvasLayer/MMenu/Credits" to="." method="_on_Credits_pressed"]

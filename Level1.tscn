@@ -11,6 +11,7 @@
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 1 )
+GRAVITY = 700
 
 [node name="Ground" parent="." instance=ExtResource( 3 )]
 position = Vector2( 9.53674e-07, 238 )

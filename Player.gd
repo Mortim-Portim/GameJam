@@ -17,6 +17,7 @@ var last_dir = Vector2.LEFT
 var dir = Vector2.LEFT
 var vel = Vector2.ZERO
 var jumping = false
+var time_since_jumpstart = 0
 var left_ground = false
 var running = false
 var was_running = false
@@ -65,6 +66,8 @@ func process_input(delta):
 		running = false
 		_on_running_end()
 	
+	if jumping:
+		time_since_jumpstart += delta
 	if jumping and !left_ground:
 		left_ground = !grounded()
 	if jumping and left_ground:
@@ -72,10 +75,15 @@ func process_input(delta):
 			jumping = false
 			left_ground = false
 			_on_jump_end()
+	elif time_since_jumpstart > 5:
+		jumping = false
+		left_ground = false
+		_on_jump_end()
 	if grounded() and !jumping:
 		if Input.is_action_just_pressed("jump"):
 			vel.y = -JUMP_SPEED
 			jumping = true
+			time_since_jumpstart = 0
 			left_ground = false
 			_on_jump_start()
 	

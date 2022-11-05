@@ -67,6 +67,7 @@ func _on_TextureButton_pressed():
 	lvl.name = "Level"+String(level_nr)
 	add_child(lvl)
 	lvl.connect("finished", self, "_on_level_finished")
+	lvl.connect("reload", self, "_on_level_reload")
 	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)

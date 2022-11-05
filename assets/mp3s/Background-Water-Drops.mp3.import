@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Background-Water-Drops.mp3-91ff18765df7e4b2a3af1d89f9947bb5.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Background-Water-Drops.mp3"
+dest_files=[ "res://.import/Background-Water-Drops.mp3-91ff18765df7e4b2a3af1d89f9947bb5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

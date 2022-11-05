@@ -80,7 +80,6 @@ cast_to = Vector2( 0.000301242, 48 )
 collision_mask = 8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 5 )

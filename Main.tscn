@@ -42,6 +42,7 @@ animations = [ {
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 607, 62 )
 
 [sub_resource type="StyleBoxEmpty" id=5]
 

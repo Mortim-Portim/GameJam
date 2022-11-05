@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ziel-Fließ-Sound.mp3-626f22637ae288d3f1e4134db39d9a
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

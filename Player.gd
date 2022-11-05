@@ -143,8 +143,6 @@ func _on_running_end():
 	$RunningSound.stop()
 
 
-#Menu settings
-
 func _on_Hitbox_area_entered(area):
 	var grps = area.get_groups()
 	if grps.has("Killer"):

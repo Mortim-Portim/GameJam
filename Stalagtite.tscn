@@ -32,3 +32,4 @@ collide_with_bodies = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+volume_db = 10.0

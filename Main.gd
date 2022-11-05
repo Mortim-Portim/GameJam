@@ -1,7 +1,10 @@
 extends Node2D
 
-var Level1 = preload("res://Level1.tscn")
+var DebugLevel = preload("res://DebugLevel.tscn")
 var test_lvl = preload("res://level designs/test level.tscn")
+
+var level_nr = 0
+var levels = [test_lvl, DebugLevel, DebugLevel, DebugLevel]
 
 var MUSIC_VOLUME = 0
 var in_game = false
@@ -13,17 +16,27 @@ func _ready():
 func _input(event):
 	if in_game:
 		if event is InputEventKey and event.scancode == KEY_ESCAPE and event.pressed == false:
-			remove_child(get_node("Level1"))
+			var lvl = get_node("Level"+String(level_nr))
+			remove_child(lvl)
+			lvl.queue_free()
+			in_game = false
 			$CanvasLayer/MMenu.visible = true
 			fade($InGameSoundtrack, $MainMenuSoundtrack)
 
 func _on_Play_pressed():
-	var lvl1 = test_lvl.instance()
-	lvl1.name = "Level1"
-	add_child(lvl1)
+	load_level(0)
 	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
+
+func load_level(state):
+	print("loading level: ", level_nr)
+	print("state: ", state)
+	var lvl = levels[level_nr].instance()
+	lvl.name = "Level"+String(level_nr)
+	add_child(lvl)
+	lvl.initialize(state)
+	lvl.connect("finished", self, "_on_level_finished")
 
 func _on_Settings_pressed():
 	$CanvasLayer/MMenu.visible = false
@@ -37,12 +50,17 @@ func _on_BackToMenu_pressed():
 	$CanvasLayer/SettingsMenu.visible = false
 
 func _on_TextureButton_pressed():
-	var lvl1 = Level1.instance()
-	lvl1.name = "Level1"
-	add_child(lvl1)
+	var lvl = DebugLevel.instance()
+	lvl.name = "Level"+String(level_nr)
+	add_child(lvl)
+	lvl.connect("finished", self, "_on_level_finished")
 	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
+
+func _on_level_finished(state):
+	level_nr += 1
+	load_level(state)
 
 onready var tween_fade = get_node("Fade")
 export var transition_duration = 0.5

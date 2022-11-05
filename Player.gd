@@ -78,7 +78,7 @@ func process_input(delta):
 	elif time_since_jumpstart > 5:
 		jumping = false
 		left_ground = false
-		_on_jump_end()
+		currentSprite.play("idle")
 	if grounded() and !jumping:
 		if Input.is_action_just_pressed("jump"):
 			vel.y = -JUMP_SPEED

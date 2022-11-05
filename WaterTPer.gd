@@ -6,7 +6,7 @@ var destination = Position2D.new()
 var enabled = true
 var time_since_last = 0
 var abklingzeit = 0.2
-export var Abstellplatz = Vector2(-10000,-10000)
+var Abstellplatz = Vector2(-10000,-10000)
 
 func _physics_process(delta):
 	if !enabled:

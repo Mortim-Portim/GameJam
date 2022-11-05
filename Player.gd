@@ -70,12 +70,16 @@ func process_input(delta):
 		time_since_jumpstart += delta
 	if jumping and !left_ground:
 		left_ground = !grounded()
+		if !left_ground and ($CeillingChecker1.is_colliding() or $CeillingChecker2.is_colliding()):
+			jumping = false
+			left_ground = false
+			currentSprite.play("idle")
 	if jumping and left_ground:
 		if grounded():
 			jumping = false
 			left_ground = false
 			_on_jump_end()
-	elif time_since_jumpstart > 5:
+	elif time_since_jumpstart > 8:
 		jumping = false
 		left_ground = false
 		currentSprite.play("idle")

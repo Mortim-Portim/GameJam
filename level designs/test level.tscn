@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/level/Block 2.png" type="Texture" id=1]
 [ext_resource path="res://assets/level/Under block 2.png" type="Texture" id=2]
@@ -34,7 +34,6 @@
 [ext_resource path="res://assets/background/h1.png" type="Texture" id=32]
 [ext_resource path="res://assets/background/h3.png" type="Texture" id=33]
 [ext_resource path="res://assets/background/Lochlein.png" type="Texture" id=34]
-[ext_resource path="res://Schwamm.tscn" type="PackedScene" id=35]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -711,10 +710,6 @@ stalagtit_path = NodePath("../Stalagtite")
 
 [node name="WaterTPer" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1026, 965 )
-
-[node name="Schwamm" parent="." instance=ExtResource( 35 )]
-position = Vector2( 5499, 527 )
-player_path = NodePath("../Player")
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

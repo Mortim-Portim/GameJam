@@ -115,9 +115,6 @@ func _on_Hitbox_body_entered(body):
 		kill()
 
 func kill():
-	var new_player = load("res://Player.tscn").instance()
-	get_parent().add_child(new_player)
-	get_parent().remove_child(self)
-	new_player.position = LastCheckPoint
-	new_player.LastCheckPoint = LastCheckPoint
-	queue_free()
+	position = LastCheckPoint
+	vel = Vector2.ZERO
+	

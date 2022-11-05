@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stalaktit-Ground-Hit-Sound.mp3-5bec053e88fb4011abd475c09b6f6618.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Stalaktit-Ground-Hit-Sound.mp3"
+dest_files=[ "res://.import/Stalaktit-Ground-Hit-Sound.mp3-5bec053e88fb4011abd475c09b6f6618.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

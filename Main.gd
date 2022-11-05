@@ -6,6 +6,7 @@ var MUSIC_VOLUME = 0
 
 func _ready():
 	randomize()
+	_on_HSlider_value_changed(90)
 
 func _on_Play_pressed():
 	var lvl1 = Level1.instance()
@@ -14,7 +15,8 @@ func _on_Play_pressed():
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 func _on_Settings_pressed():
-	pass
+	$CanvasLayer/MMenu.visible = false
+	$CanvasLayer/SettingsMenu.visible = true
 
 func _on_Credits_pressed():
 	pass
@@ -45,3 +47,7 @@ func play_click_sound():
 
 func _on_button_down():
 	play_click_sound()
+
+
+func _on_HSlider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value-90)

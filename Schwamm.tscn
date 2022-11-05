@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/anims/Schwamm_idle/Unbenanntes_Projekt-3.png" type="Texture" id=1]
 [ext_resource path="res://assets/anims/Schwamm_idle/Unbenanntes_Projekt-1.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/anims/Walk_Schwamm/Unbenanntes_Projekt-3.png" type="Texture" id=5]
 [ext_resource path="res://assets/anims/Walk_Schwamm/Unbenanntes_Projekt-1.png" type="Texture" id=6]
 [ext_resource path="res://Schwamm.gd" type="Script" id=7]
+[ext_resource path="res://assets/mp3s/Schwamm-Death-Soound.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/mp3s/Lauf-Sound-Schwamm-Loopable.mp3" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 63.0
@@ -25,7 +27,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Schwamm" type="KinematicBody2D" groups=["Killer"]]
+[node name="Schwamm" type="KinematicBody2D" groups=["Killer0", "Killer2"]]
 collision_layer = 5
 script = ExtResource( 7 )
 
@@ -38,13 +40,38 @@ position = Vector2( -1.52588e-05, -1.52588e-05 )
 scale = Vector2( 0.153565, 0.153565 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Right" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 100, 0 )
+collision_mask = 8
 
 [node name="Left" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( -100, 0 )
+collision_mask = 8
+
+[node name="Ded" type="RayCast2D" parent="."]
+position = Vector2( 0, -85 )
+enabled = true
+cast_to = Vector2( -25, -37 )
+collision_mask = 2
+
+[node name="Ded2" type="RayCast2D" parent="."]
+position = Vector2( 0, -85 )
+enabled = true
+cast_to = Vector2( 25, -37 )
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Running" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+volume_db = 15.0
+
+[connection signal="finished" from="Death" to="." method="_on_Death_finished"]

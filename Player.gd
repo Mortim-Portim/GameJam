@@ -159,8 +159,7 @@ func _on_running_end():
 
 func _on_Hitbox_area_entered(area):
 	var grps = area.get_groups()
-	if grps.has("Killer"):
-		kill()
+	check_group_kill(grps)
 	if grps.has("CheckPoint"):
 		LastCheckPoint = area.position
 	if grps.has("0") and state != 0:
@@ -191,7 +190,17 @@ func to_gas():
 	update_sprite_from_state()
 
 func _on_Hitbox_body_entered(body):
-	if body.get_groups().has("Killer"):
+	var grps = body.get_groups()
+	check_group_kill(grps)
+
+func check_group_kill(grps):
+	if grps.has("Killer"):
+		kill()
+	elif grps.has("Killer0") and state == 0:
+		kill()
+	elif grps.has("Killer1") and state == 1:
+		kill()
+	elif grps.has("Killer2") and state == 2:
 		kill()
 
 func kill():

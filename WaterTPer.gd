@@ -17,6 +17,9 @@ func _on_Area2D_area_entered(area):
 	if !enabled:
 		return
 	player = area.get_parent()
+	if player.state != 0:
+		return
+	$AudioStreamPlayer2D.play()
 	player.visible = false
 	player.set_physics_process(false)
 	destination = $Area2D2.global_position
@@ -27,6 +30,9 @@ func _on_Area2D2_area_entered(area):
 	if !enabled:
 		return
 	player = area.get_parent()
+	if player.state != 0:
+		return
+	$AudioStreamPlayer2D.play()
 	player.visible = false
 	player.set_physics_process(false)
 	destination = $Area2D.global_position

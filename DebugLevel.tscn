@@ -71,7 +71,6 @@ position = Vector2( -617, 142 )
 [node name="Schwamm" parent="." instance=ExtResource( 14 )]
 position = Vector2( -2494, 4 )
 player_path = NodePath("../Player")
-MAX_DIS = 1200
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

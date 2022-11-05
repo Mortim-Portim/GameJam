@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Schwamm-Death-Soound.mp3-76c2f91ebcf7476a8702c13dad1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -17,6 +17,10 @@ var was_running = false
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding() or $GroundChecker3.is_colliding()
+func Wall_left():
+	return $WallChecker1.is_colliding()
+func Wall_right():
+	return $WallChecker2.is_colliding()
 
 func _physics_process(delta):
 	if active:
@@ -25,9 +29,9 @@ func _physics_process(delta):
 
 func process_input(delta):
 	dir = Vector2.ZERO
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") and !Wall_left():
 		dir += Vector2.LEFT
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") and !Wall_right():
 		dir += Vector2.RIGHT
 	if !dir.is_equal_approx(Vector2.ZERO) and !dir.is_equal_approx(last_dir):
 		if dir.is_equal_approx(Vector2.LEFT):

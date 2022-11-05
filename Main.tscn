@@ -19,7 +19,7 @@ animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 5.0
 } ]
 
 [node name="Main" type="Node2D"]
@@ -59,6 +59,7 @@ margin_right = 919.0
 margin_bottom = -356.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/MMenu"]
 anchor_left = 0.5
@@ -71,6 +72,7 @@ margin_right = 95.5
 margin_bottom = 257.5
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
 
 [node name="Credits" type="TextureButton" parent="CanvasLayer/MMenu"]
 anchor_left = 0.5
@@ -83,6 +85,7 @@ margin_right = 302.0
 margin_bottom = 453.5
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

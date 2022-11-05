@@ -15,8 +15,8 @@ func _physics_process(delta):
 			mode = RigidBody2D.MODE_RIGID
 	elif !is_ground:
 		time_since_fall += delta
-	if !hanging and is_killer and !is_ground and time_since_fall > 0.5:
-		if linear_velocity.length_squared() < 50:
+	if !hanging and is_killer and !is_ground and time_since_fall > 0.1:
+		if abs(linear_velocity.y) < 20:
 			remove_from_group("Killer")
 			is_killer = false
 	if !hanging and !is_ground and time_since_fall > 0.1:

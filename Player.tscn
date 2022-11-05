@@ -51,23 +51,36 @@ editor_draw_drag_margin = true
 [node name="GroundChecker1" type="RayCast2D" parent="."]
 position = Vector2( 30, -20 )
 enabled = true
-cast_to = Vector2( 0, 25 )
+cast_to = Vector2( -6, 22 )
+collision_mask = 8
+
+[node name="WallChecker1" type="RayCast2D" parent="."]
+position = Vector2( -44, -46 )
+enabled = true
+cast_to = Vector2( -2, 21 )
+collision_mask = 8
+
+[node name="WallChecker2" type="RayCast2D" parent="."]
+position = Vector2( 44, -46 )
+enabled = true
+cast_to = Vector2( 2, 21 )
 collision_mask = 8
 
 [node name="GroundChecker2" type="RayCast2D" parent="."]
 position = Vector2( -30, -20 )
 enabled = true
-cast_to = Vector2( 0, 25 )
+cast_to = Vector2( 6, 22 )
 collision_mask = 8
 
 [node name="GroundChecker3" type="RayCast2D" parent="."]
-position = Vector2( -25, 2 )
+position = Vector2( -24, 2 )
 rotation = -1.57079
 enabled = true
-cast_to = Vector2( 0.000110626, 50 )
+cast_to = Vector2( 0.000301242, 48 )
 collision_mask = 8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 5 )

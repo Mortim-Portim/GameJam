@@ -85,7 +85,7 @@ func process_input(delta):
 		jumping = false
 		left_ground = false
 		currentSprite.play("idle")
-	if grounded() and !jumping:
+	if grounded() and !jumping and state != 2:
 		if Input.is_action_just_pressed("jump"):
 			vel.y = -JUMP_SPEED
 			jumping = true
@@ -174,6 +174,10 @@ func to_ice():
 	update_sprite_from_state()
 
 func to_gas():
+	jumping = false
+	left_ground = false
+	landing = false
+	_on_landed()
 	$ToGasSound.play()
 	state = 2
 	update_sprite_from_state()

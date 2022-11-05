@@ -253,7 +253,6 @@ z_index = -1
 texture = ExtResource( 5 )
 
 [node name="Stalagtite" type="RigidBody2D" parent="." groups=["Killer"]]
-visible = false
 position = Vector2( 1314, 14 )
 collision_layer = 13
 mode = 1
@@ -290,7 +289,6 @@ scale = Vector2( 0.230469, 0.230469 )
 texture = ExtResource( 5 )
 
 [node name="Statechangers" type="Node2D" parent="."]
-visible = false
 position = Vector2( 1951, 330 )
 
 [node name="StateChanger" type="Area2D" parent="Statechangers"]

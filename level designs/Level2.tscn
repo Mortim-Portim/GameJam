@@ -292,16 +292,16 @@ position = Vector2( 6295, 4457 )
 position = Vector2( 6451, 4457 )
 
 [node name="Stalagtite11" parent="stalagtusse" instance=ExtResource( 16 )]
-position = Vector2( 6606, 4457 )
+position = Vector2( 6598, 4457 )
 
 [node name="Stalagtite12" parent="stalagtusse" instance=ExtResource( 16 )]
-position = Vector2( 6762, 4457 )
+position = Vector2( 6745, 4457 )
 
 [node name="Stalagtite13" parent="stalagtusse" instance=ExtResource( 16 )]
-position = Vector2( 6918, 4457 )
+position = Vector2( 6900, 4457 )
 
 [node name="Stalagtite14" parent="stalagtusse" instance=ExtResource( 16 )]
-position = Vector2( 7073, 4457 )
+position = Vector2( 7052, 4457 )
 
 [node name="Riesilers" type="Node2D" parent="."]
 

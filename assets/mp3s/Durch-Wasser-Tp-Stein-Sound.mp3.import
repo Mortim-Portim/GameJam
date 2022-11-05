@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Durch-Wasser-Tp-Stein-Sound.mp3-1020714d2be6dbc13edf90f43569eb33.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Durch-Wasser-Tp-Stein-Sound.mp3"
+dest_files=[ "res://.import/Durch-Wasser-Tp-Stein-Sound.mp3-1020714d2be6dbc13edf90f43569eb33.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

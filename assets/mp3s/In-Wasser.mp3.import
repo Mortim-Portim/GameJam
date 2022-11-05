@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/In-Wasser.mp3-8aca0aa249934cf6dc7ca9a782515fba.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/In-Wasser.mp3"
+dest_files=[ "res://.import/In-Wasser.mp3-8aca0aa249934cf6dc7ca9a782515fba.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

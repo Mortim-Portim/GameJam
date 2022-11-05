@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anims/Idle_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://assets/anims/Jump_Eis/Unbenanntes_Projekt-2.png" type="Texture" id=33]
 [ext_resource path="res://assets/mp3s/Wasser-zu-dampf-sound.mp3" type="AudioStream" id=34]
 [ext_resource path="res://assets/mp3s/Freeze-Sound-Player.mp3" type="AudioStream" id=35]
+[ext_resource path="res://assets/mp3s/In-Wasser.mp3" type="AudioStream" id=36]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 45.0111
@@ -185,6 +186,7 @@ position = Vector2( 0, -48 )
 shape = SubResource( 6 )
 
 [node name="ToWaterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
 
 [node name="ToIceSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 35 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block 1.jpg-e8cf1cceb95628a1e03ca3f0372813af.stex"
+path="res://.import/decke 2.png-0738f37e5f656606ddb239423de9bc81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level blocks/jpg/block 1.jpg"
-dest_files=[ "res://.import/block 1.jpg-e8cf1cceb95628a1e03ca3f0372813af.stex" ]
+source_file="res://assets/level/decke 2.png"
+dest_files=[ "res://.import/decke 2.png-0738f37e5f656606ddb239423de9bc81.stex" ]
 
 [params]
 

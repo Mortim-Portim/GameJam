@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/block 2 mirrored.png-eec67d93335a4e1dbcb49c33ee58a0b8.stex"
+path="res://.import/decke 1.png-cced701867296b0782016454c87329d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level blocks/block 2 mirrored.png"
-dest_files=[ "res://.import/block 2 mirrored.png-eec67d93335a4e1dbcb49c33ee58a0b8.stex" ]
+source_file="res://assets/level/decke 1.png"
+dest_files=[ "res://.import/decke 1.png-cced701867296b0782016454c87329d5.stex" ]
 
 [params]
 

@@ -50,7 +50,7 @@ position = Vector2( -71, -88 )
 polygon = PoolVector2Array( -13, -12, 138, -17, 139, 128, 110, 265, 98, 171, 73, 392, 65, 379, 16, 115, 9, 195, -7, 122 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( -184, 0 )
+position = Vector2( -570, 4 )
 enabled = true
 cast_to = Vector2( 0, 4000 )
 collision_mask = 2

@@ -10,7 +10,7 @@ export var ACCEL = 10
 export var DEACCEL= 40
 
 var sprites = []
-var state = 2
+var state = 1
 var currentSprite = AnimatedSprite.new()
 
 var last_dir = Vector2.LEFT
@@ -83,6 +83,7 @@ func process_input(delta):
 		time_since_landed += delta
 		if time_since_landed > landing_anim_time:
 			_on_landed()
+			landing = false
 	
 	last_dir = dir
 
@@ -121,7 +122,7 @@ func _on_landed():
 		_on_running_end()
 
 func _on_running_start():
-	if !jumping:
+	if !jumping and !(currentSprite.playing and currentSprite.animation == "running"):
 		currentSprite.play("running")
 	$RunningSound.play()
 func _on_running_end():

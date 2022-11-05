@@ -6,6 +6,7 @@ func _ready():
 	$Player.spawn($Spawn.position)
 
 func _on_Player_killed(lastCheck):
+	$DeathSound.play()
 	print("killed")
 	var new_player = player_instance.instance()
 	new_player.name = "Player"

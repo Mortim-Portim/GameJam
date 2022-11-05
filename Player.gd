@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal killed(lastCheck)
+
 export var active = true
 export var GRAVITY = 900
 export var MAX_SPEED = 400
@@ -141,12 +143,8 @@ func _on_Hitbox_body_entered(body):
 		kill()
 
 func kill():
-	$DeathSound.play()
-	currentSprite = $WaterSprite
-	position = LastCheckPoint
-	vel = Vector2.ZERO
-	state = 0
-	update_sprite_from_state()
+	emit_signal("killed", LastCheckPoint)
+	queue_free()
 
 func update_sprite_from_state():
 	$WaterSprite.visible = state == 0

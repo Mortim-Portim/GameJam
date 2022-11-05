@@ -6,6 +6,7 @@ var destination = Position2D.new()
 var enabled = true
 var time_since_last = 0
 var abklingzeit = 0.2
+export var Abstellplatz = Vector2(-10000,-10000)
 
 func _physics_process(delta):
 	if !enabled:
@@ -20,6 +21,7 @@ func _on_Area2D_area_entered(area):
 	player.visible = false
 	player.set_physics_process(false)
 	destination = $Area2D2.global_position
+	player.position = Abstellplatz
 	$AnimatedSprite.play("Flowing")
 
 func _on_Area2D2_area_entered(area):
@@ -29,6 +31,7 @@ func _on_Area2D2_area_entered(area):
 	player.visible = false
 	player.set_physics_process(false)
 	destination = $Area2D.global_position
+	player.position = Abstellplatz
 	$AnimatedSprite.play("Flowing", true)
 
 

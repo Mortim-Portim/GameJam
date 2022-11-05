@@ -18,6 +18,7 @@ func _on_Area2D_area_entered(area):
 		return
 	player = area.get_parent()
 	player.visible = false
+	player.set_physics_process(false)
 	destination = $Area2D2.global_position
 	$AnimatedSprite.play("Flowing")
 
@@ -26,6 +27,7 @@ func _on_Area2D2_area_entered(area):
 		return
 	player = area.get_parent()
 	player.visible = false
+	player.set_physics_process(false)
 	destination = $Area2D.global_position
 	$AnimatedSprite.play("Flowing", true)
 
@@ -34,4 +36,5 @@ func _on_AnimatedSprite_animation_finished():
 	enabled = false
 	time_since_last = 0
 	player.visible = true
+	player.set_physics_process(true)
 	player.position = destination

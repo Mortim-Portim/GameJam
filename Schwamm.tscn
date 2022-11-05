@@ -40,3 +40,11 @@ frames = SubResource( 2 )
 animation = "idle"
 frame = 3
 playing = true
+
+[node name="Right" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 100, 0 )
+
+[node name="Left" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -100, 0 )

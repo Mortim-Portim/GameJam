@@ -447,7 +447,7 @@ scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
 [node name="StateChanger14" parent="Statechangers" instance=ExtResource( 19 )]
-position = Vector2( 656, 521 )
+position = Vector2( 496, 397 )
 scale = Vector2( 2.6, 2.6 )
 state = 2
 

@@ -69,7 +69,7 @@ state = 2
 position = Vector2( -617, 142 )
 
 [node name="Schwamm" parent="." instance=ExtResource( 14 )]
-position = Vector2( -5772, -8 )
+position = Vector2( -2494, 4 )
 player_path = NodePath("../Player")
 MAX_DIS = 1200
 

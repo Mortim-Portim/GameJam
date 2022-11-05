@@ -1,17 +1,27 @@
 extends Node2D
 
 var Level1 = preload("res://Level1.tscn")
-
+var test_lvl = preload("res://level designs/test level.tscn")
 
 var MUSIC_VOLUME = 0
+var in_game = false
 
 func _ready():
 	randomize()
 	_on_HSlider_value_changed(90)
 
+func _input(event):
+	if in_game:
+		if event is InputEventKey and event.scancode == KEY_ESCAPE and event.pressed == false:
+			remove_child(get_node("Level1"))
+			$CanvasLayer/MMenu.visible = true
+			fade($InGameSoundtrack, $MainMenuSoundtrack)
+
 func _on_Play_pressed():
-	var lvl1 = Level1.instance()
+	var lvl1 = test_lvl.instance()
+	lvl1.name = "Level1"
 	add_child(lvl1)
+	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
@@ -28,7 +38,9 @@ func _on_BackToMenu_pressed():
 
 func _on_TextureButton_pressed():
 	var lvl1 = Level1.instance()
+	lvl1.name = "Level1"
 	add_child(lvl1)
+	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 

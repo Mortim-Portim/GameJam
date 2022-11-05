@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Glass-Death-Sound.mp3-12e4661ba63dfd228800a55caa9ffa3e.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Glass-Death-Sound.mp3"
+dest_files=[ "res://.import/Glass-Death-Sound.mp3-12e4661ba63dfd228800a55caa9ffa3e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

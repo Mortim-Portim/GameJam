@@ -10,6 +10,8 @@ export var MAX_SPEED = 400
 export var JUMP_SPEED = 600
 export var ACCEL = 10
 export var DEACCEL= 40
+export var Ice_Deaccel = 0.001
+export var Ice_Accel = 40
 
 var sprites = []
 var state = 0
@@ -113,13 +115,16 @@ func process_movement(delta):
 	target_vel.y = vel.y
 	
 	var accel = ACCEL
+	if state == 1:
+		accel = Ice_Accel
 	if dir.length_squared() < 0.5:
-		accel = DEACCEL
+		if state == 1:
+			accel = Ice_Deaccel
+		else:
+			accel = DEACCEL
 	var n_vel = vel.linear_interpolate(target_vel, accel*delta)
 	n_vel.y = vel.y
-	if state == 1:
-		n_vel.x = target_vel.x
-	vel = move_and_slide(n_vel, Vector2.UP, true, 4, 0.78, true)
+	vel = move_and_slide(n_vel, Vector2.UP, true, 4, 0.78, false)
 
 func _on_jump_start():
 	was_running = running

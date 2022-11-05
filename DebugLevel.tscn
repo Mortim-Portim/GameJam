@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Stalagtite.tscn" type="PackedScene" id=10]
 [ext_resource path="res://StateChanger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Rieseler.tscn" type="PackedScene" id=12]
+[ext_resource path="res://WaterTPer.tscn" type="PackedScene" id=13]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource( 4 )
@@ -62,6 +63,9 @@ state = 1
 [node name="StateChanger3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2565, 46 )
 state = 2
+
+[node name="WaterTPer" parent="." instance=ExtResource( 13 )]
+position = Vector2( -617, 142 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

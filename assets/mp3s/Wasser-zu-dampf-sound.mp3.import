@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Wasser-zu-dampf-sound.mp3-3a18fb9b374c79a5f59b8c1694
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

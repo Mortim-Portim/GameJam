@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anims/Idle_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=2]
@@ -33,6 +33,8 @@
 [ext_resource path="res://assets/anims/Jump_gas_/Unbenanntes_Projekt-3.png" type="Texture" id=31]
 [ext_resource path="res://assets/anims/Jump_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=32]
 [ext_resource path="res://assets/anims/Jump_Eis/Unbenanntes_Projekt-2.png" type="Texture" id=33]
+[ext_resource path="res://assets/mp3s/Wasser-zu-dampf-sound.mp3" type="AudioStream" id=34]
+[ext_resource path="res://assets/mp3s/Freeze-Sound-Player.mp3" type="AudioStream" id=35]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 45.0111
@@ -143,7 +145,6 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 3
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -182,6 +183,14 @@ collision_mask = 52
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -48 )
 shape = SubResource( 6 )
+
+[node name="ToWaterSound" type="AudioStreamPlayer" parent="."]
+
+[node name="ToIceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 35 )
+
+[node name="ToGasSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 34 )
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -131,9 +131,7 @@ func _on_running_end():
 	$RunningSound.stop()
 
 
-#Change sounds
 #Menu settings
-#
 
 func _on_Hitbox_area_entered(area):
 	var grps = area.get_groups()
@@ -141,22 +139,25 @@ func _on_Hitbox_area_entered(area):
 		kill()
 	if grps.has("CheckPoint"):
 		LastCheckPoint = area.position
-	if grps.has("0"):
+	if grps.has("0") and state != 0:
 		to_water()
-	if grps.has("1"):
+	if grps.has("1") and state != 1:
 		to_ice()
-	if grps.has("2"):
+	if grps.has("2") and state != 2:
 		to_gas()
 
 func to_water():
+	$ToWaterSound.play()
 	state = 0
 	update_sprite_from_state()
 
 func to_ice():
+	$ToIceSound.play()
 	state = 1
 	update_sprite_from_state()
 
 func to_gas():
+	$ToGasSound.play()
 	state = 2
 	update_sprite_from_state()
 

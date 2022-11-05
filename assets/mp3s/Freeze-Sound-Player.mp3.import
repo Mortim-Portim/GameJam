@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Freeze-Sound-Player.mp3-c2f3bbd55d813c158f2b97af0fa8
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ice-Player-Death-Sound.mp3-e7c094ec4561858bd7488ce5c820aa68.mp3str"
+
+[deps]
+
+source_file="res://assets/mp3s/Ice-Player-Death-Sound.mp3"
+dest_files=[ "res://.import/Ice-Player-Death-Sound.mp3-e7c094ec4561858bd7488ce5c820aa68.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

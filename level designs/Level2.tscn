@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://assets/background/r1.png" type="Texture" id=30]
 [ext_resource path="res://assets/background/hKaputt.png" type="Texture" id=31]
 [ext_resource path="res://assets/background/speedwagon.PNG" type="Texture" id=32]
+[ext_resource path="res://Schwamm.tscn" type="PackedScene" id=33]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -651,6 +652,18 @@ position = Vector2( 2363, 670 )
 scale = Vector2( 0.148684, 0.153131 )
 z_index = -4
 texture = ExtResource( 31 )
+
+[node name="Schwamm" parent="." instance=ExtResource( 33 )]
+position = Vector2( 2927, 4508 )
+scale = Vector2( 0.754185, 0.754185 )
+
+[node name="Schwamm2" parent="." instance=ExtResource( 33 )]
+position = Vector2( 3476, 4059 )
+scale = Vector2( 0.754185, 0.754185 )
+
+[node name="Schwamm3" parent="." instance=ExtResource( 33 )]
+position = Vector2( 3595, 4829 )
+scale = Vector2( 0.754185, 0.754185 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

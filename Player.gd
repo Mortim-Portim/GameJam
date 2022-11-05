@@ -170,14 +170,14 @@ func kill():
 	queue_free()
 
 func update_sprite_from_state():
+	var flh = currentSprite.flip_h
+	var ani = currentSprite.animation
 	$WaterSprite.visible = state == 0
 	$IceSprite.visible = state == 1
 	$GasSprite.visible = state == 2
 	currentSprite = sprites[state]
-	if dir.is_equal_approx(Vector2.LEFT):
-		currentSprite.flip_h=false
-	elif dir.is_equal_approx(Vector2.RIGHT):
-		currentSprite.flip_h=true
+	currentSprite.flip_h = flh
+	currentSprite.play(ani)
 
 func spawn(pos):
 	$SpawnSound.play()

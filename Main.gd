@@ -2,10 +2,12 @@ extends Node2D
 
 var DebugLevel = preload("res://DebugLevel.tscn")
 var test_lvl = preload("res://level designs/test level.tscn")
+var lvl2 = preload("res://level designs/Level2.tscn")
 var lvl3 = preload("res://level designs/Level3.tscn")
+var lvl4 = preload("res://level designs/Level_4.tscn")
 
 var level_nr = 0
-var levels = [test_lvl, test_lvl, DebugLevel, DebugLevel]
+var levels = [test_lvl, lvl2, lvl3, lvl4]
 
 var MUSIC_VOLUME = 0
 var in_game = false

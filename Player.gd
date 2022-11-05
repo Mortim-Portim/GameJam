@@ -14,6 +14,7 @@ var jumping = false
 var left_ground = false
 var running = false
 var was_running = false
+var LastCheckPoint = Vector2.ZERO
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding() or $GroundChecker3.is_colliding()
@@ -28,6 +29,8 @@ func _physics_process(delta):
 		process_movement(delta)
 
 func process_input(delta):
+	if Input.is_key_pressed(KEY_R):
+		kill()
 	dir = Vector2.ZERO
 	if Input.is_action_pressed("move_left") and !Wall_left():
 		dir += Vector2.LEFT
@@ -100,8 +103,11 @@ func _on_running_end():
 
 
 func _on_Hitbox_area_entered(area):
-	if area.get_groups().has("Killer"):
+	var grps = area.get_groups()
+	if grps.has("Killer"):
 		kill()
+	if grps.has("CheckPoint"):
+		LastCheckPoint = area.position
 
 
 func _on_Hitbox_body_entered(body):
@@ -109,4 +115,9 @@ func _on_Hitbox_body_entered(body):
 		kill()
 
 func kill():
-	print("Killed")
+	var new_player = load("res://Player.tscn").instance()
+	get_parent().add_child(new_player)
+	get_parent().remove_child(self)
+	new_player.position = LastCheckPoint
+	new_player.LastCheckPoint = LastCheckPoint
+	queue_free()

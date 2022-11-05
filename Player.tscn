@@ -98,8 +98,8 @@ volume_db = 10.0
 stream = ExtResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Player"]]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 2
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -48 )

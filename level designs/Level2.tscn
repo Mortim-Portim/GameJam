@@ -655,17 +655,17 @@ texture = ExtResource( 31 )
 
 [node name="Schwamm" parent="." instance=ExtResource( 33 )]
 position = Vector2( 2927, 4508 )
-scale = Vector2( 0.754185, 0.754185 )
+scale = Vector2( 0.546472, 0.546472 )
 player_path = NodePath("../Player")
 
 [node name="Schwamm2" parent="." instance=ExtResource( 33 )]
 position = Vector2( 3476, 4059 )
-scale = Vector2( 0.754185, 0.754185 )
+scale = Vector2( 0.641142, 0.641142 )
 player_path = NodePath("../Player")
 
 [node name="Schwamm3" parent="." instance=ExtResource( 33 )]
 position = Vector2( 3595, 4829 )
-scale = Vector2( 0.754185, 0.754185 )
+scale = Vector2( 0.561796, 0.561796 )
 player_path = NodePath("../Player")
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]

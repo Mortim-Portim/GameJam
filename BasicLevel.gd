@@ -16,7 +16,7 @@ func reload_after_death(state, lastCheck):
 	$Player.position = lastCheck
 	$Player.LastCheckPoint = lastCheck
 	$Player.get_node("Camera2D").current = true
-	$Player.update_sprite_from_state()
+	$Player._ready()
 
 func _on_Player_killed(lastCheck):
 	emit_signal("reload", $Player.state, lastCheck)

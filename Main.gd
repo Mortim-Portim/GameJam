@@ -46,7 +46,7 @@ func reload_level(state, lastCheck):
 	print("state: ", state)
 	var lvl = levels[level_nr].instance()
 	lvl.name = "Level"+String(level_nr)
-	add_child(lvl)
+	call_deferred("add_child", lvl)
 	lvl.reload_after_death(state, lastCheck)
 	lvl.connect("finished", self, "_on_level_finished")
 	lvl.connect("reload", self, "_on_level_reload")
@@ -73,7 +73,7 @@ func _on_TextureButton_pressed():
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 func _on_level_reload(state, lastCheck):
-	remove_child(get_node("Level"+String(level_nr)))
+	call_deferred("remove_child", get_node("Level"+String(level_nr)))
 	reload_level(state, lastCheck)
 
 func _on_level_finished(state):

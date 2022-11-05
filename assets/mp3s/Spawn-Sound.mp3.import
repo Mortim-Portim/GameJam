@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Spawn-Sound.mp3-60f44916b9452a9c3468584c4709db66.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

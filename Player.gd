@@ -125,6 +125,7 @@ func _on_Hitbox_body_entered(body):
 		kill()
 
 func kill():
+	$DeathSound.play()
 	currentSprite = $WaterSprite
 	position = LastCheckPoint
 	vel = Vector2.ZERO
@@ -135,3 +136,9 @@ func update_sprite_from_state():
 	$WaterSprite.visible = state == 0
 	$IceSprite.visible = state == 1
 	currentSprite = sprites[state]
+
+func spawn(pos):
+	$SpawnSound.play()
+	LastCheckPoint = pos
+	position = LastCheckPoint
+	vel = Vector2.ZERO

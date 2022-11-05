@@ -237,6 +237,7 @@ texture = ExtResource( 8 )
 [node name="SpawnRock1" type="Sprite" parent="."]
 position = Vector2( 201, 365 )
 scale = Vector2( 0.287354, 0.287354 )
+z_index = -2
 texture = ExtResource( 7 )
 
 [node name="Stalaktit2" type="Sprite" parent="."]

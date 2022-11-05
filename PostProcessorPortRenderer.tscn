@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://PostProcessorPortRenderer.gd" type="Script" id=2]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("TextureSprite/PPPort")
+
+[sub_resource type="Environment" id=2]
+background_energy = 0.0
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+auto_exposure_speed = 64.0
+ssao_radius = 45.24
+ssao_intensity = 128.0
+dof_blur_near_distance = 279.31
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.28
+glow_hdr_scale = 1.61
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+adjustment_saturation = 1.3
+
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 12.8, 7.2 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("TextureSprite/PPPort/Post_Processor/3dVP")
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+flags_albedo_tex_force_srgb = true
+params_specular_mode = 4
+params_cull_mode = 2
+params_depth_draw_mode = 2
+albedo_texture = SubResource( 4 )
+
+[node name="PostProcessorPortRenderer" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureSprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 1, -1 )
+texture = SubResource( 1 )
+
+[node name="PPPort" type="Viewport" parent="TextureSprite"]
+size = Vector2( 1920, 1080 )
+size_override_stretch = true
+
+[node name="Post_Processor" type="Spatial" parent="TextureSprite/PPPort"]
+__meta__ = {
+"_editor_description_": "Add your world to the Viewport
+
+Stretch:
+Mode: 2d
+Aspect: keep"
+}
+
+[node name="3dVP" type="Viewport" parent="TextureSprite/PPPort/Post_Processor"]
+size = Vector2( 1920, 1080 )
+size_override_stretch = true
+hdr = false
+shadow_atlas_quad_0 = 0
+shadow_atlas_quad_1 = 0
+shadow_atlas_quad_2 = 0
+shadow_atlas_quad_3 = 0
+
+[node name="Camera" type="Camera" parent="TextureSprite/PPPort/Post_Processor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0 )
+projection = 1
+fov = 105.0
+size = 7.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="TextureSprite/PPPort/Post_Processor"]
+environment = SubResource( 2 )
+
+[node name="TexturedMesh" type="MeshInstance" parent="TextureSprite/PPPort/Post_Processor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
+cast_shadow = 0
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )

@@ -8,7 +8,7 @@ export var ACCEL = 10
 export var DEACCEL= 40
 
 var sprites = []
-var state = 1
+var state = 2
 var currentSprite = AnimatedSprite.new()
 
 var last_dir = Vector2.LEFT
@@ -20,9 +20,14 @@ var running = false
 var was_running = false
 var LastCheckPoint = Vector2.ZERO
 
+var landing = false
+var time_since_landed = 0
+var landing_anim_time = 0.2
+
 func _ready():
 	sprites.append(get_node("WaterSprite"))
 	sprites.append(get_node("IceSprite"))
+	sprites.append(get_node("GasSprite"))
 	currentSprite = sprites[state]
 	update_sprite_from_state()
 
@@ -72,6 +77,11 @@ func process_input(delta):
 			left_ground = false
 			_on_jump_start()
 	
+	if landing:
+		time_since_landed += delta
+		if time_since_landed > landing_anim_time:
+			_on_landed()
+	
 	last_dir = dir
 
 func process_movement(delta):
@@ -98,9 +108,15 @@ func _on_jump_start():
 		$JumpSound2.play()
 
 func _on_jump_end():
-	currentSprite.play("idle")
-	if was_running and abs(vel.x) > 1:
+	currentSprite.play("jump", true)
+	landing = true
+	time_since_landed = 0
+
+func _on_landed():
+	if abs(vel.x) > 1:
 		_on_running_start()
+	else:
+		_on_running_end()
 
 func _on_running_start():
 	if !jumping:
@@ -135,6 +151,7 @@ func kill():
 func update_sprite_from_state():
 	$WaterSprite.visible = state == 0
 	$IceSprite.visible = state == 1
+	$GasSprite.visible = state == 2
 	currentSprite = sprites[state]
 
 func spawn(pos):

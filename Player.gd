@@ -4,6 +4,8 @@ signal killed(lastCheck)
 
 export var active = true
 export var GRAVITY = 900
+export var levitation_gas_force = 100
+export var levitation_gas_max_speed = 80
 export var MAX_SPEED = 400
 export var JUMP_SPEED = 600
 export var ACCEL = 10
@@ -100,7 +102,12 @@ func process_input(delta):
 	last_dir = dir
 
 func process_movement(delta):
-	vel.y += delta * GRAVITY
+	if state == 2:
+		vel.y -= delta * levitation_gas_force
+		if vel.y < -levitation_gas_max_speed:
+			vel.y = -levitation_gas_max_speed
+	else:
+		vel.y += delta * GRAVITY
 	
 	var target_vel = dir*MAX_SPEED
 	target_vel.y = vel.y

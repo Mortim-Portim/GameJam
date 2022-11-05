@@ -10,7 +10,7 @@ export var ACCEL = 10
 export var DEACCEL= 40
 
 var sprites = []
-var state = 1
+var state = 0
 var currentSprite = AnimatedSprite.new()
 
 var last_dir = Vector2.LEFT
@@ -24,7 +24,7 @@ var LastCheckPoint = Vector2.ZERO
 
 var landing = false
 var time_since_landed = 0
-var landing_anim_time = 0.2
+var landing_anim_time = 0.15
 
 func _ready():
 	sprites.append(get_node("WaterSprite"))
@@ -131,13 +131,34 @@ func _on_running_end():
 	$RunningSound.stop()
 
 
+#Change sounds
+#Menu settings
+#
+
 func _on_Hitbox_area_entered(area):
 	var grps = area.get_groups()
 	if grps.has("Killer"):
 		kill()
 	if grps.has("CheckPoint"):
 		LastCheckPoint = area.position
+	if grps.has("0"):
+		to_water()
+	if grps.has("1"):
+		to_ice()
+	if grps.has("2"):
+		to_gas()
 
+func to_water():
+	state = 0
+	update_sprite_from_state()
+
+func to_ice():
+	state = 1
+	update_sprite_from_state()
+
+func to_gas():
+	state = 2
+	update_sprite_from_state()
 
 func _on_Hitbox_body_entered(body):
 	if body.get_groups().has("Killer"):

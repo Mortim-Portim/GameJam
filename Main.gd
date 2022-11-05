@@ -14,11 +14,10 @@ func _on_Play_pressed():
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 func _on_Settings_pressed():
-	pass # Replace with function body.
-
+	pass
 
 func _on_Credits_pressed():
-	pass # Replace with function body.
+	pass
 
 onready var tween_fade = get_node("Fade")
 export var transition_duration = 0.5
@@ -36,3 +35,13 @@ func fade(stream_player1, stream_player2):
 func _on_Fade_tween_all_completed():
 	fade_out_player.stop()
 	fade_out_player.volume_db = MUSIC_VOLUME
+
+func play_click_sound():
+	if randi()%2 == 0:
+		$ClickSound1.play()
+	else:
+		$ClickSound2.play()
+
+
+func _on_button_down():
+	play_click_sound()

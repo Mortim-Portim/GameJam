@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Menü-Klick-Sound 2.mp3-bd0b173968506628e70f86902d7b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Stalaktit-Ground-Hit-Sound.mp3-5bec053e88fb4011abd47
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

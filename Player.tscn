@@ -143,6 +143,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -176,7 +177,7 @@ stream = ExtResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Player"]]
 collision_layer = 2
-collision_mask = 20
+collision_mask = 52
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -48 )

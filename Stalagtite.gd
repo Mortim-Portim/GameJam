@@ -17,6 +17,7 @@ func _physics_process(delta):
 		time_since_fall += delta
 	if !hanging and is_killer and !is_ground and time_since_fall > 0.1:
 		if abs(linear_velocity.y) < 20:
+			$AudioStreamPlayer2D.play()
 			remove_from_group("Killer")
 			is_killer = false
 	if !hanging and !is_ground and time_since_fall > 0.1:

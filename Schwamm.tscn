@@ -28,6 +28,7 @@ animations = [ {
 [node name="Schwamm" type="KinematicBody2D" groups=["Killer"]]
 collision_layer = 5
 script = ExtResource( 7 )
+MAX_SPEED = 350
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -21 )
@@ -38,7 +39,7 @@ position = Vector2( -1.52588e-05, -1.52588e-05 )
 scale = Vector2( 0.153565, 0.153565 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Right" type="RayCast2D" parent="."]

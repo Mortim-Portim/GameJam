@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/level/Spawn rock/spawn rock 1.png" type="Texture" id=7]
 [ext_resource path="res://assets/level/Stone/go through stone 1.png" type="Texture" id=8]
 [ext_resource path="res://assets/umgebung/lampe.png" type="Texture" id=9]
-[ext_resource path="res://Stalagtite.gd" type="Script" id=10]
+[ext_resource path="res://Stalagtite.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/level/decke 1.png" type="Texture" id=12]
 [ext_resource path="res://assets/level/über decke.png" type="Texture" id=13]
@@ -24,7 +24,7 @@
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=22]
 [ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/mp3s/Stalaktit-Ground-Hit-Sound.mp3" type="AudioStream" id=25]
+[ext_resource path="res://Rieseler.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/background/r1.png" type="Texture" id=26]
 [ext_resource path="res://assets/background/t1.png" type="Texture" id=27]
 [ext_resource path="res://assets/level/box1.jpg" type="Texture" id=28]
@@ -258,42 +258,6 @@ position = Vector2( 3098, 780 )
 rotation = 3.14159
 scale = Vector2( 0.589844, 0.834541 )
 z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Stalagtite" type="RigidBody2D" parent="." groups=["Killer"]]
-position = Vector2( 1314, 14 )
-collision_layer = 13
-mode = 1
-mass = 1000.0
-gravity_scale = 10.0
-script = ExtResource( 10 )
-
-[node name="Shape1" type="CollisionPolygon2D" parent="Stalagtite"]
-position = Vector2( -391, -21 )
-polygon = PoolVector2Array( 322, -68, 391, -74, 447, -78, 468, -74, 467, 83, 441, 213, 429, 110, 406, 332, 400, 325, 354, 92, 349, 61, 342, 145, 326, 77, 318, -24 )
-
-[node name="RayCast2D" type="RayCast2D" parent="Stalagtite"]
-position = Vector2( -317, -129 )
-enabled = true
-cast_to = Vector2( 0, 4000 )
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="RayCast2D2" type="RayCast2D" parent="Stalagtite"]
-position = Vector2( 274, -156 )
-enabled = true
-cast_to = Vector2( 0, 4000 )
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Stalagtite"]
-stream = ExtResource( 25 )
-
-[node name="Stalaktit" type="Sprite" parent="Stalagtite"]
-position = Vector2( 8, 131 )
-scale = Vector2( 0.230469, 0.230469 )
 texture = ExtResource( 5 )
 
 [node name="Statechangers" type="Node2D" parent="."]
@@ -655,5 +619,14 @@ texture = ExtResource( 26 )
 [node name="Goal" parent="." instance=ExtResource( 30 )]
 position = Vector2( 4895, 1241 )
 
+[node name="Stalagtite" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1188, 57 )
+
+[node name="Rieseler" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1188, 57 )
+stalagtit_path = NodePath("../Stalagtite")
+
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]
+
+[editable path="Stalagtite"]

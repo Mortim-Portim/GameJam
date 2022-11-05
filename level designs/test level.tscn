@@ -508,6 +508,82 @@ position = Vector2( 5328, 769 )
 scale = Vector2( 0.81847, 0.126376 )
 z_index = 2
 
+[node name="Ground18" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2164, 21 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground19" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2355, -41 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground20" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2485, -170 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground21" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2676, -235 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground22" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2868, -298 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground23" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 2931, -363 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground24" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3060, -427 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground25" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3348, -491 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground26" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3789, -299 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground27" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3853, -235 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground28" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3917, -105 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground29" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 4044, -42 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground30" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 1638, 21 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground31" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5284, 1316 )
+scale = Vector2( 1.63, 1 )
+
+[node name="Ground32" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5156, 1380 )
+scale = Vector2( 1.63, 1 )
+
+[node name="Ground33" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 4572, 1382 )
+scale = Vector2( 1.63, 1 )
+
+[node name="Ground34" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 4637, 1444 )
+scale = Vector2( 1.63, 1 )
+
+[node name="Ground35" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5092, 1508 )
+scale = Vector2( 1.63, 1 )
+
+[node name="Ground36" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 4701, 1508 )
+scale = Vector2( 1.63, 1 )
+
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( 215, 650 )
 
@@ -605,6 +681,12 @@ scale = Vector2( 0.092, 0.061 )
 z_index = -6
 texture = ExtResource( 33 )
 
+[node name="Lochlein" type="Sprite" parent="extra stuff"]
+position = Vector2( 2524, 860 )
+scale = Vector2( 0.094, 0.102 )
+z_index = -6
+texture = ExtResource( 34 )
+
 [node name="R1" type="Sprite" parent="."]
 position = Vector2( 4558, 1080 )
 rotation = 1.09258
@@ -620,11 +702,6 @@ position = Vector2( 1267, 57 )
 
 [node name="RayCast2D" parent="Stalagtite" index="1"]
 position = Vector2( -469, 0 )
-
-[node name="Lochlein" type="Sprite" parent="Stalagtite/RayCast2D" index="0"]
-position = Vector2( 1726, 803 )
-scale = Vector2( 0.094, 0.102 )
-texture = ExtResource( 34 )
 
 [node name="Rieseler" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1188, 57 )

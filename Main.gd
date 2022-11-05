@@ -2,6 +2,7 @@ extends Node2D
 
 var Level1 = preload("res://Level1.tscn")
 
+
 var MUSIC_VOLUME = 0
 
 func _ready():
@@ -20,6 +21,16 @@ func _on_Settings_pressed():
 
 func _on_Credits_pressed():
 	pass
+
+func _on_BackToMenu_pressed():
+	$CanvasLayer/MMenu.visible = true
+	$CanvasLayer/SettingsMenu.visible = false
+
+func _on_TextureButton_pressed():
+	var lvl1 = Level1.instance()
+	add_child(lvl1)
+	$CanvasLayer/MMenu.visible = false
+	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 onready var tween_fade = get_node("Fade")
 export var transition_duration = 0.5
@@ -44,15 +55,8 @@ func play_click_sound():
 	else:
 		$ClickSound2.play()
 
-
 func _on_button_down():
 	play_click_sound()
 
-
 func _on_HSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), ((2-2/(sqrt(value/90)+1)-1)*90 ))
-
-
-func _on_BackToMenu_pressed():
-	$CanvasLayer/MMenu.visible = true
-	$CanvasLayer/SettingsMenu.visible = false

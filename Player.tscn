@@ -141,7 +141,6 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]

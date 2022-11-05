@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/mp3s/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://assets/GUI/home_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/GUI/Lautstarke_Balken.png" type="Texture" id=23]
 [ext_resource path="res://assets/GUI/home_2.png" type="Texture" id=24]
+[ext_resource path="res://PostProcessorPortRenderer.tscn" type="PackedScene" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -61,6 +62,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
+frame = 3
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -118,7 +120,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]
@@ -166,6 +168,8 @@ volume_db = 12.0
 [node name="ClickSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 volume_db = 15.0
+
+[node name="PostProcessorPortRenderer" parent="." instance=ExtResource( 25 )]
 
 [connection signal="pressed" from="CanvasLayer/MMenu/MainScreen2/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="button_down" from="CanvasLayer/MMenu/Settings" to="." method="_on_button_down"]

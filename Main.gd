@@ -16,28 +16,23 @@ func _ready():
 	randomize()
 	_on_HSlider_value_changed(90)
 
-func _input(event):
-	if in_game:
-		if event is InputEventKey and event.scancode == KEY_ESCAPE and event.pressed == false:
-			var lvl = get_node("Level"+String(level_nr))
-			remove_child(lvl)
-			lvl.queue_free()
-			in_game = false
-			$CanvasLayer/MMenu.visible = true
-			fade($InGameSoundtrack, $MainMenuSoundtrack)
-
 func _on_Play_pressed():
 	load_level(0)
 	in_game = true
 	$CanvasLayer/MMenu.visible = false
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
+func add_world_to_scene(lvl):
+	$PostProcessorPortRenderer.assign_world(lvl)
+func rem_world_from_scene(lvl):
+	pass
+
 func load_level(state):
 	print("loading level: ", level_nr)
 	print("state: ", state)
 	var lvl = levels[level_nr].instance()
 	lvl.name = "Level"+String(level_nr)
-	add_child(lvl)
+	add_world_to_scene(lvl)
 	lvl.initialize(state)
 	lvl.connect("finished", self, "_on_level_finished")
 	lvl.connect("reload", self, "_on_level_reload")
@@ -46,7 +41,7 @@ func reload_level(state, lastCheck):
 	print("state: ", state)
 	var lvl = levels[level_nr].instance()
 	lvl.name = "Level"+String(level_nr)
-	call_deferred("add_child", lvl)
+	call_deferred("add_world_to_scene", lvl)
 	lvl.reload_after_death(state, lastCheck)
 	lvl.connect("finished", self, "_on_level_finished")
 	lvl.connect("reload", self, "_on_level_reload")
@@ -73,11 +68,11 @@ func _on_TextureButton_pressed():
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 func _on_level_reload(state, lastCheck):
-	call_deferred("remove_child", get_node("Level"+String(level_nr)))
+	call_deferred("rem_world_from_scene", get_node("Level"+String(level_nr)))
 	reload_level(state, lastCheck)
 
 func _on_level_finished(state):
-	remove_child(get_node("Level"+String(level_nr)))
+	rem_world_from_scene(get_node("Level"+String(level_nr)))
 	level_nr += 1
 	load_level(state)
 

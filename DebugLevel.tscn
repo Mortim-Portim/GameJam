@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Killer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stalagtite.tscn" type="PackedScene" id=10]
 [ext_resource path="res://StateChanger.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Rieseler.tscn" type="PackedScene" id=12]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource( 4 )
@@ -46,6 +47,10 @@ position = Vector2( 337, 67 )
 
 [node name="Stalagtite" parent="." instance=ExtResource( 10 )]
 position = Vector2( 879, -622 )
+
+[node name="Rieseler" parent="." instance=ExtResource( 12 )]
+position = Vector2( 879, -755 )
+stalagtit_path = NodePath("../Stalagtite")
 
 [node name="StateChanger" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1880, 47 )

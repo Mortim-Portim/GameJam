@@ -50,7 +50,7 @@ func _on_button_down():
 
 
 func _on_HSlider_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value-90)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), ((2-2/(sqrt(value/90)+1)-1)*90 ))
 
 
 func _on_BackToMenu_pressed():

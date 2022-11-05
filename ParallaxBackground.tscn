@@ -18,7 +18,7 @@ motion_scale = Vector2( 0.4, 0.8 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="BgSpikes1" type="Sprite" parent="Back2"]
-position = Vector2( 960, -138 )
+position = Vector2( 960, 252 )
 texture = ExtResource( 3 )
 
 [node name="Back3" type="ParallaxLayer" parent="."]
@@ -26,13 +26,13 @@ motion_scale = Vector2( 0.75, 0.9 )
 motion_mirroring = Vector2( 1920, 0 )
 
 [node name="BgSpikes2" type="Sprite" parent="Back3"]
-position = Vector2( 960, -296 )
+position = Vector2( 960, -4 )
 texture = ExtResource( 2 )
 
 [node name="BgSpikes3" type="Sprite" parent="Back3"]
-position = Vector2( 960, -516 )
+position = Vector2( 960, -224 )
 texture = ExtResource( 2 )
 
 [node name="BgSpikes4" type="Sprite" parent="Back3"]
-position = Vector2( 960, -740 )
+position = Vector2( 960, -448 )
 texture = ExtResource( 2 )

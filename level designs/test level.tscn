@@ -275,232 +275,238 @@ collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Ground" parent="." instance=ExtResource( 11 )]
-position = Vector2( -7, 1066 )
-scale = Vector2( 36.817, 1 )
-
-[node name="Ground2" parent="." instance=ExtResource( 11 )]
-position = Vector2( -932.984, 1194.35 )
-scale = Vector2( 89.749, 1 )
-
-[node name="Ground3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1823.75, 937 )
-scale = Vector2( 2.622, 1 )
-
-[node name="Ground4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1884, 1002 )
-scale = Vector2( 2.685, 1 )
-
-[node name="Ground5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3092, 1102 )
-scale = Vector2( 3.0378, -2.21507 )
-
-[node name="Ground6" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3091, 826 )
-scale = Vector2( -2.82819, -2.90301 )
-
-[node name="Ground7" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3094, 384 )
-scale = Vector2( -1.02819, -3.12883 )
-
-[node name="Ground8" parent="." instance=ExtResource( 11 )]
-position = Vector2( 5348, 1194 )
-scale = Vector2( 2.685, 1 )
-
-[node name="Ground9" parent="." instance=ExtResource( 11 )]
-position = Vector2( 5540, 1130 )
-scale = Vector2( 2.685, 1 )
-
-[node name="Ground10" parent="." instance=ExtResource( 11 )]
-position = Vector2( 5604, 1066 )
-scale = Vector2( 2.685, 1 )
-
-[node name="StateChanger" type="Area2D" parent="."]
+[node name="Statechangers" type="Node2D" parent="."]
 position = Vector2( 1951, 330 )
+
+[node name="StateChanger" type="Area2D" parent="Statechangers"]
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger2" type="Area2D" parent="."]
-position = Vector2( 2142, 266 )
+[node name="StateChanger2" type="Area2D" parent="Statechangers"]
+position = Vector2( 191, -64 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger2"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger3" type="Area2D" parent="."]
-position = Vector2( 2270, 137 )
+[node name="StateChanger3" type="Area2D" parent="Statechangers"]
+position = Vector2( 319, -193 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger3"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger4" type="Area2D" parent="."]
-position = Vector2( 2462, 73 )
+[node name="StateChanger4" type="Area2D" parent="Statechangers"]
+position = Vector2( 511, -257 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger4"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger5" type="Area2D" parent="."]
-position = Vector2( 2653, 9 )
+[node name="StateChanger5" type="Area2D" parent="Statechangers"]
+position = Vector2( 702, -321 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger5"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger6" type="Area2D" parent="."]
-position = Vector2( 2717, -56 )
+[node name="StateChanger6" type="Area2D" parent="Statechangers"]
+position = Vector2( 766, -386 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger6"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger7" type="Area2D" parent="."]
-position = Vector2( 2846, -119 )
+[node name="StateChanger7" type="Area2D" parent="Statechangers"]
+position = Vector2( 895, -449 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger7"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger8" type="Area2D" parent="."]
-position = Vector2( 3636, -184 )
+[node name="StateChanger8" type="Area2D" parent="Statechangers"]
+position = Vector2( 1685, -514 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger8"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger9" type="Area2D" parent="."]
-position = Vector2( 5197, -76 )
+[node name="StateChanger9" type="Area2D" parent="Statechangers"]
+position = Vector2( 3246, -406 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger9"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -15.5975 )
 shape = SubResource( 9 )
 
-[node name="StateChanger10" type="Area2D" parent="."]
-position = Vector2( 5262, 73 )
+[node name="StateChanger10" type="Area2D" parent="Statechangers"]
+position = Vector2( 3311, -257 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger10"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger11" type="Area2D" parent="."]
-position = Vector2( 5326, 201 )
+[node name="StateChanger11" type="Area2D" parent="Statechangers"]
+position = Vector2( 3375, -129 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger11"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger12" type="Area2D" parent="."]
-position = Vector2( 5455, 263 )
+[node name="StateChanger12" type="Area2D" parent="Statechangers"]
+position = Vector2( 3504, -67 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger12"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger13" type="Area2D" parent="."]
-position = Vector2( 5520, 328 )
+[node name="StateChanger13" type="Area2D" parent="Statechangers"]
+position = Vector2( 3569, -2 )
 collision_layer = 32
 collision_mask = 0
 monitoring = false
 script = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StateChanger13"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Statechangers/StateChanger13"]
 position = Vector2( -598.004, -302 )
 rotation = -3.14159
 scale = Vector2( 33.4992, -8.39753 )
 shape = SubResource( 9 )
 
-[node name="StateChanger14" parent="." instance=ExtResource( 19 )]
-position = Vector2( 2607, 851 )
+[node name="StateChanger14" parent="Statechangers" instance=ExtResource( 19 )]
+position = Vector2( 656, 521 )
 scale = Vector2( 2.6, 2.6 )
 state = 2
 
-[node name="Ground11" parent="." instance=ExtResource( 11 )]
+[node name="Grounds" type="Node2D" parent="."]
+
+[node name="Ground" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( -7, 1066 )
+scale = Vector2( 36.817, 1 )
+
+[node name="Ground2" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( -932.984, 1194.35 )
+scale = Vector2( 89.749, 1 )
+
+[node name="Ground3" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 1823.75, 937 )
+scale = Vector2( 2.622, 1 )
+
+[node name="Ground4" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 1884, 1002 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground5" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3092, 1102 )
+scale = Vector2( 3.0378, -2.21507 )
+
+[node name="Ground6" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3091, 826 )
+rotation = 3.14159
+scale = Vector2( 2.82819, 2.90301 )
+
+[node name="Ground7" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 3094, 384 )
+rotation = 3.14159
+scale = Vector2( 1.02819, 3.12883 )
+
+[node name="Ground8" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5348, 1194 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground9" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5540, 1130 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground10" parent="Grounds" instance=ExtResource( 11 )]
+position = Vector2( 5604, 1066 )
+scale = Vector2( 2.685, 1 )
+
+[node name="Ground11" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 5731, 909 )
 scale = Vector2( 2.685, 1.4 )
 
-[node name="Ground12" parent="." instance=ExtResource( 11 )]
+[node name="Ground12" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 5797, 740 )
 scale = Vector2( 2.685, 1 )
 
-[node name="Ground13" parent="." instance=ExtResource( 11 )]
+[node name="Ground13" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 5859, 628 )
 scale = Vector2( 2.685, 6.68 )
 
-[node name="Ground14" parent="." instance=ExtResource( 11 )]
+[node name="Ground14" parent="Grounds" instance=ExtResource( 11 )]
 position = Vector2( 2140, 1130 )
 scale = Vector2( 2.685, 1 )

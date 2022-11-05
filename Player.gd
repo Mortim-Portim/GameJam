@@ -7,6 +7,10 @@ export var JUMP_SPEED = 600
 export var ACCEL = 10
 export var DEACCEL= 40
 
+var sprites = []
+var state = 1
+var currentSprite = AnimatedSprite.new()
+
 var last_dir = Vector2.LEFT
 var dir = Vector2.LEFT
 var vel = Vector2.ZERO
@@ -15,6 +19,12 @@ var left_ground = false
 var running = false
 var was_running = false
 var LastCheckPoint = Vector2.ZERO
+
+func _ready():
+	sprites.append(get_node("WaterSprite"))
+	sprites.append(get_node("IceSprite"))
+	currentSprite = sprites[state]
+	update_sprite_from_state()
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding() or $GroundChecker3.is_colliding()
@@ -38,9 +48,9 @@ func process_input(delta):
 		dir += Vector2.RIGHT
 	if !dir.is_equal_approx(Vector2.ZERO) and !dir.is_equal_approx(last_dir):
 		if dir.is_equal_approx(Vector2.LEFT):
-			$AnimatedSprite.flip_h=false
+			currentSprite.flip_h=false
 		else:
-			$AnimatedSprite.flip_h=true
+			currentSprite.flip_h=true
 	if !running and !dir.is_equal_approx(Vector2.ZERO):
 		running = true
 		_on_running_start()
@@ -81,24 +91,24 @@ func _on_jump_start():
 	was_running = running
 	if running:
 		_on_running_end()
-	$AnimatedSprite.play("jump")
+	currentSprite.play("jump")
 	if randi()%2 == 0:
 		$JumpSound1.play()
 	else:
 		$JumpSound2.play()
 
 func _on_jump_end():
-	$AnimatedSprite.play("idle")
+	currentSprite.play("idle")
 	if was_running and abs(vel.x) > 1:
 		_on_running_start()
 
 func _on_running_start():
 	if !jumping:
-		$AnimatedSprite.play("running")
+		currentSprite.play("running")
 	$RunningSound.play()
 func _on_running_end():
 	if !jumping:
-		$AnimatedSprite.play("idle")
+		currentSprite.play("idle")
 	$RunningSound.stop()
 
 
@@ -115,6 +125,13 @@ func _on_Hitbox_body_entered(body):
 		kill()
 
 func kill():
+	currentSprite = $WaterSprite
 	position = LastCheckPoint
 	vel = Vector2.ZERO
-	
+	state = 0
+	update_sprite_from_state()
+
+func update_sprite_from_state():
+	$WaterSprite.visible = state == 0
+	$IceSprite.visible = state == 1
+	currentSprite = sprites[state]

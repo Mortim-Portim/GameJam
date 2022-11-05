@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/mp3s/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -21,7 +21,9 @@
 [ext_resource path="res://assets/GUI/sback1.jpg" type="Texture" id=19]
 [ext_resource path="res://assets/GUI/Settings_Menu.png" type="Texture" id=20]
 [ext_resource path="res://assets/GUI/lautstärke_regler.png" type="Texture" id=21]
+[ext_resource path="res://assets/GUI/home_1.png" type="Texture" id=22]
 [ext_resource path="res://assets/GUI/Lautstarke_Balken.png" type="Texture" id=23]
+[ext_resource path="res://assets/GUI/home_2.png" type="Texture" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -53,14 +55,13 @@ script = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MMenu" type="Control" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -111,12 +112,14 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 
 [node name="SettingsMenu" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]
@@ -129,11 +132,24 @@ margin_top = 432.0
 margin_right = 1398.0
 margin_bottom = 761.0
 focus_mode = 0
+custom_icons/grabber_highlight = ExtResource( 21 )
 custom_icons/grabber = ExtResource( 21 )
 custom_styles/slider = SubResource( 3 )
 custom_styles/grabber_area_highlight = SubResource( 5 )
 custom_styles/grabber_area = SubResource( 4 )
 value = 90.0
+
+[node name="BackToMenu" type="TextureButton" parent="CanvasLayer/SettingsMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.5
+margin_top = 305.5
+margin_right = 96.5
+margin_bottom = 506.5
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 24 )
 
 [node name="MainMenuSoundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
@@ -159,4 +175,6 @@ volume_db = 15.0
 [connection signal="button_down" from="CanvasLayer/MMenu/Credits" to="." method="_on_button_down"]
 [connection signal="pressed" from="CanvasLayer/MMenu/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="value_changed" from="CanvasLayer/SettingsMenu/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="button_down" from="CanvasLayer/SettingsMenu/BackToMenu" to="." method="_on_button_down"]
+[connection signal="pressed" from="CanvasLayer/SettingsMenu/BackToMenu" to="." method="_on_BackToMenu_pressed"]
 [connection signal="tween_all_completed" from="Fade" to="." method="_on_Fade_tween_all_completed"]

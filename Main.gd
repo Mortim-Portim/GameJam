@@ -51,3 +51,8 @@ func _on_button_down():
 
 func _on_HSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value-90)
+
+
+func _on_BackToMenu_pressed():
+	$CanvasLayer/MMenu.visible = true
+	$CanvasLayer/SettingsMenu.visible = false

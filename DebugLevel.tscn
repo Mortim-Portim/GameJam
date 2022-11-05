@@ -58,7 +58,7 @@ stalagtit_path = NodePath("../Stalagtite")
 position = Vector2( 1880, 47 )
 
 [node name="StateChanger2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 2225, 46 )
+position = Vector2( 187, 73 )
 state = 1
 
 [node name="StateChanger3" parent="." instance=ExtResource( 11 )]

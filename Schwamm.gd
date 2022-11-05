@@ -31,7 +31,7 @@ func _physics_process(delta):
 				$AnimatedSprite.stop()
 				visible = false
 				$CollisionShape2D.disabled = true
-		if dis < 300:
+		if dis < 150:
 			dir = Vector2.ZERO
 	
 	if !is_on_floor():

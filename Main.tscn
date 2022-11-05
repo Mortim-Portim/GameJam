@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/mp3s/keys-of-moon-under-the-sun.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -16,14 +16,36 @@
 [ext_resource path="res://assets/mp3s/Main-Menü-Music.mp3" type="AudioStream" id=14]
 [ext_resource path="res://assets/mp3s/Menü-Klick-Sound.mp3" type="AudioStream" id=15]
 [ext_resource path="res://assets/mp3s/Menü-Klick-Sound 2.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/GUI/sback3.jpg" type="Texture" id=17]
+[ext_resource path="res://assets/GUI/sback2.jpg" type="Texture" id=18]
+[ext_resource path="res://assets/GUI/sback1.jpg" type="Texture" id=19]
+[ext_resource path="res://assets/GUI/Settings_Menu.png" type="Texture" id=20]
+[ext_resource path="res://assets/GUI/lautstärke_regler.png" type="Texture" id=21]
+[ext_resource path="res://assets/GUI/grabber2.png" type="Texture" id=22]
+[ext_resource path="res://assets/GUI/Lautstarke_Balken.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 23 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -31,13 +53,14 @@ script = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MMenu" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -88,8 +111,31 @@ texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 
 [node name="SettingsMenu" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
+position = Vector2( 960, 540 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 20 )
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/SettingsMenu"]
+margin_left = 690.0
+margin_top = 432.0
+margin_right = 1398.0
+margin_bottom = 761.0
+focus_mode = 0
+custom_icons/grabber_highlight = ExtResource( 22 )
+custom_icons/grabber = ExtResource( 21 )
+custom_styles/slider = SubResource( 3 )
+custom_styles/grabber_area_highlight = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 4 )
+value = 50.0
 
 [node name="MainMenuSoundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )

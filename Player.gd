@@ -4,8 +4,8 @@ signal killed(lastCheck)
 
 export var active = true
 export var GRAVITY = 900
-export var levitation_gas_force = 100
-export var levitation_gas_max_speed = 140
+export var levitation_gas_force = 150
+export var levitation_gas_max_speed = 200
 export var MAX_SPEED = 400
 export var JUMP_SPEED = 600
 export var ACCEL = 10
@@ -177,7 +177,7 @@ func to_gas():
 	jumping = false
 	left_ground = false
 	landing = false
-	vel = Vector2.ZERO
+	vel = vel*0.3
 	_on_landed()
 	$ToGasSound.play()
 	state = 2

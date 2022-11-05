@@ -174,6 +174,10 @@ func update_sprite_from_state():
 	$IceSprite.visible = state == 1
 	$GasSprite.visible = state == 2
 	currentSprite = sprites[state]
+	if dir.is_equal_approx(Vector2.LEFT):
+		currentSprite.flip_h=false
+	elif dir.is_equal_approx(Vector2.RIGHT):
+		currentSprite.flip_h=true
 
 func spawn(pos):
 	$SpawnSound.play()

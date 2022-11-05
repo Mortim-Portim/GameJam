@@ -87,6 +87,10 @@ margin_bottom = 453.5
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 
+[node name="SettingsMenu" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="MainMenuSoundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 autoplay = true

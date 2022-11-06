@@ -258,8 +258,8 @@ func check_group_kill(grps):
 		kill()
 
 func kill():
-	emit_signal("killed", LastCheckPoint)
-	queue_free()
+	currentSprite.play("death")
+	$Death.play()
 
 func update_sprite_from_state():
 	var flh = currentSprite.flip_h
@@ -276,3 +276,8 @@ func spawn(pos):
 	LastCheckPoint = pos
 	position = LastCheckPoint
 	vel = Vector2.ZERO
+
+
+func _on_Death_finished():
+	emit_signal("killed", LastCheckPoint)
+	queue_free()

@@ -30,22 +30,26 @@ scale_random = 0.25
 position = Vector2( 0, -182 )
 scale = Vector2( 0.063, 0.137833 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]
 amount = 2
 lifetime = 2.0
+local_coords = false
 process_material = SubResource( 2 )
 texture = ExtResource( 3 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 amount = 2
 lifetime = 2.0
+local_coords = false
 process_material = SubResource( 2 )
 texture = ExtResource( 4 )
 
 [node name="Particles2D3" type="Particles2D" parent="."]
 amount = 2
 lifetime = 2.0
+local_coords = false
 process_material = SubResource( 2 )
 texture = ExtResource( 5 )

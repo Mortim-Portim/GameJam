@@ -120,10 +120,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
-<<<<<<< HEAD
 frame = 3
-=======
->>>>>>> c2d1972768c557b631c2f26733fdc72929cd37d0
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]

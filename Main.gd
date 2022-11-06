@@ -7,7 +7,8 @@ var lvl3 = preload("res://level designs/Level3.tscn")
 var lvl4 = preload("res://level designs/Level_4.tscn")
 
 var level_nr = 0
-var levels = [test_lvl, lvl2, lvl3, lvl4]
+const max_lvl = 3
+var levels = [test_lvl, lvl2, lvl3]
 
 var MUSIC_VOLUME = 0
 var in_game = false
@@ -79,6 +80,7 @@ func _on_level_reload(state, lastCheck):
 func _on_level_finished(state):
 	#rem_world_from_scene(get_node("Level"+String(level_nr)))
 	level_nr += 1
+	if level_nr >= max_lvl:
 	load_level(state)
 
 onready var tween_fade = get_node("Fade")

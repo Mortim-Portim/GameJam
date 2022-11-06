@@ -52,11 +52,14 @@ func _on_Settings_pressed():
 
 func _on_Credits_pressed():
 	$CanvasLayer/MMenu.visible = false
+	$CanvasLayer/CreditsMenu/VideoPlayer.play()
 	$CanvasLayer/CreditsMenu.visible = true
 
 func _on_BackToMenu_pressed():
 	$CanvasLayer/MMenu.visible = true
 	$CanvasLayer/SettingsMenu.visible = false
+	$CanvasLayer/CreditsMenu.visible = false
+	$CanvasLayer/CreditsMenu/VideoPlayer.stop()
 
 func _on_TextureButton_pressed():
 	var lvl = DebugLevel.instance()
@@ -106,3 +109,7 @@ func _on_button_down():
 
 func _on_HSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), ((2-2/(sqrt(value/90)+1)-1)*90 ))
+
+
+func _on_VideoPlayer_finished():
+	_on_BackToMenu_pressed()

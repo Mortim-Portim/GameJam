@@ -11,7 +11,6 @@ func initialize(state):
 	$Player.update_sprite_from_state()
 
 func reload_after_death(state, lastCheck):
-	$DeathSound.play()
 	$Player.state = state
 	$Player.position = lastCheck
 	$Player.LastCheckPoint = lastCheck

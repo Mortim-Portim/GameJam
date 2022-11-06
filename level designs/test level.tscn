@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/level/Block 2.png" type="Texture" id=1]
 [ext_resource path="res://assets/level/Under block 2.png" type="Texture" id=2]
@@ -36,23 +36,8 @@
 [ext_resource path="res://Lochlein.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Schwamm.tscn" type="PackedScene" id=35]
 
-[sub_resource type="OccluderPolygon2D" id=13]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="OccluderPolygon2D" id=14]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="OccluderPolygon2D" id=10]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="OccluderPolygon2D" id=11]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
-
-[sub_resource type="OccluderPolygon2D" id=12]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [sub_resource type="TileSet" id=1]
 1/name = "Block 2.png 1"
@@ -76,7 +61,6 @@ polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 2/region = Rect2( 0, 0, 64, 64 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
-2/occluder = SubResource( 10 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -91,7 +75,6 @@ polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 3/region = Rect2( 0, 0, 64, 64 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
-3/occluder = SubResource( 11 )
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -169,7 +152,6 @@ polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 9/region = Rect2( 0, 0, 64, 64 )
 9/tile_mode = 0
 9/occluder_offset = Vector2( 0, 0 )
-9/occluder = SubResource( 12 )
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -212,7 +194,6 @@ polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 12/region = Rect2( 0, 0, 64, 64 )
 12/tile_mode = 0
 12/occluder_offset = Vector2( 0, 0 )
-12/occluder = SubResource( 13 )
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -227,7 +208,6 @@ polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 13/region = Rect2( 0, 0, 64, 64 )
 13/tile_mode = 0
 13/occluder_offset = Vector2( 0, 0 )
-13/occluder = SubResource( 14 )
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -725,11 +705,9 @@ stalagtit_path = NodePath("../Stalagtite")
 [node name="WaterTPer" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1026, 965 )
 
-[node name="WaterTPer" parent="WaterTPer" instance=ExtResource( 8 )]
-position = Vector2( -468, 0 )
-
 [node name="Schwamm" parent="." instance=ExtResource( 35 )]
-position = Vector2( 1944, 748 )
+position = Vector2( 5570, 534 )
+scale = Vector2( 0.753355, 0.753355 )
 player_path = NodePath("../Player")
 
 [node name="Lochlein" parent="." instance=ExtResource( 34 )]

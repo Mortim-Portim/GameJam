@@ -30,7 +30,6 @@ scale_random = 0.25
 position = Vector2( 0, -182 )
 scale = Vector2( 0.063, 0.137833 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="Particles2D" type="Particles2D" parent="."]

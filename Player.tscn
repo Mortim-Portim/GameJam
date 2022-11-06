@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anims/Idle_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=2]
@@ -36,6 +36,8 @@
 [ext_resource path="res://assets/mp3s/Wasser-zu-dampf-sound.mp3" type="AudioStream" id=34]
 [ext_resource path="res://assets/mp3s/Freeze-Sound-Player.mp3" type="AudioStream" id=35]
 [ext_resource path="res://assets/mp3s/In-Wasser.mp3" type="AudioStream" id=36]
+[ext_resource path="res://assets/GUI/temometa2.png" type="Texture" id=37]
+[ext_resource path="res://assets/GUI/temometa1.png" type="Texture" id=38]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 45.0111
@@ -96,6 +98,68 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=6]
 radius = 48.0104
+
+[sub_resource type="Animation" id=14]
+resource_name = "IceGas"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect/TextureRect2:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 337, 0, 0, 0, 0, 12, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "IceWater"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect/TextureRect2:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 337, 0, 0, 0, 0, 159, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect/TextureRect2:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 337, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("TextureRect/TextureRect2:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 28, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "WaterGas"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("TextureRect/TextureRect2:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 159, 0, 0, 0, 0, 12, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -205,6 +269,38 @@ cast_to = Vector2( 0, -21 )
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 44.0
+margin_top = -478.0
+margin_right = 169.0
+margin_bottom = -43.0
+rect_pivot_offset = Vector2( 62.5, 435 )
+texture = ExtResource( 37 )
+expand = true
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/TextureRect"]
+anchor_left = 0.504
+anchor_top = 1.0
+anchor_right = 0.504
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -98.0
+margin_right = 35.0
+margin_bottom = -27.9999
+rect_pivot_offset = Vector2( 35, 35 )
+texture = ExtResource( 38 )
+expand = true
+stretch_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control"]
+anims/IceGas = SubResource( 14 )
+anims/IceWater = SubResource( 13 )
+anims/RESET = SubResource( 12 )
+anims/WaterGas = SubResource( 15 )
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

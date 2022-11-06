@@ -12,6 +12,9 @@ export var ACCEL = 10
 export var DEACCEL= 40
 export var Ice_Deaccel = 0.001
 export var Ice_Accel = 40
+export var max_time_in_ice_form = 10
+
+var temps =  [159, 337, 12]
 
 var sprites = []
 var state = 0
@@ -31,12 +34,16 @@ var landing = false
 var time_since_landed = 0
 var landing_anim_time = 0.15
 
+var time_since_ice = 0
+var ice_to_water_start = false
+
 func _ready():
 	sprites.append(get_node("WaterSprite"))
 	sprites.append(get_node("IceSprite"))
 	sprites.append(get_node("GasSprite"))
 	currentSprite = sprites[state]
 	update_sprite_from_state()
+	$CanvasLayer/Control/TextureRect/TextureRect2.rect_position.y = temps[state]
 
 func grounded():
 	return $GroundChecker1.is_colliding() or $GroundChecker2.is_colliding() or $GroundChecker3.is_colliding()
@@ -100,6 +107,17 @@ func process_input(delta):
 		if time_since_landed > landing_anim_time:
 			_on_landed()
 			landing = false
+	
+	if state == 1:
+		time_since_ice += delta
+		if time_since_ice > 1:
+			if !ice_to_water_start:
+				ice_to_water_start = true
+				print("playing")
+				$CanvasLayer/Control/AnimationPlayer.play("IceWater", -1, 1/float(max_time_in_ice_form-1))
+		if time_since_ice > max_time_in_ice_form:
+			$CanvasLayer/Control/AnimationPlayer.playback_speed=1
+			to_water(false)
 	
 	last_dir = dir
 
@@ -169,17 +187,34 @@ func _on_Hitbox_area_entered(area):
 	if grps.has("2") and state != 2:
 		to_gas()
 
-func to_water():
+func to_water(play_anim=true):
+	if play_anim:
+		if state == 1:
+			$CanvasLayer/Control/AnimationPlayer.play("IceWater")
+		elif state == 2:
+			$CanvasLayer/Control/AnimationPlayer.play_backwards("WaterGas")
 	$ToWaterSound.play()
 	state = 0
 	update_sprite_from_state()
 
-func to_ice():
+func to_ice(play_anim=true):
+	if play_anim:
+		if state == 0:
+			$CanvasLayer/Control/AnimationPlayer.play_backwards("IceWater")
+		elif state == 2:
+			$CanvasLayer/Control/AnimationPlayer.play_backwards("IceGas")
 	$ToIceSound.play()
 	state = 1
+	time_since_ice = 0
+	ice_to_water_start = false
 	update_sprite_from_state()
 
-func to_gas():
+func to_gas(play_anim=true):
+	if play_anim:
+		if state == 0:
+			$CanvasLayer/Control/AnimationPlayer.play("WaterGas")
+		elif state == 1:
+			$CanvasLayer/Control/AnimationPlayer.play("IceGas")
 	jumping = false
 	left_ground = false
 	landing = false

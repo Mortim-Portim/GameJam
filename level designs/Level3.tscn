@@ -564,6 +564,7 @@ z_index = -1
 texture = ExtResource( 42 )
 
 [node name="collisions" type="Node2D" parent="."]
+visible = false
 
 [node name="Ground" parent="collisions" instance=ExtResource( 28 )]
 position = Vector2( -107, 933 )
@@ -734,32 +735,8 @@ position = Vector2( 5476, 2465 )
 scale = Vector2( 2.88, 3.533 )
 
 [node name="Ground43" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 5536, 2859 )
+position = Vector2( 5536, 3358 )
 scale = Vector2( 2.88, 13.213 )
-
-[node name="Ground44" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 5408, 1769 )
-scale = Vector2( 2.88, 3.533 )
-
-[node name="Ground45" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 5472, 1827 )
-scale = Vector2( 2.88, 3.533 )
-
-[node name="Ground46" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 6176, 1891 )
-scale = Vector2( 2.88, 3.533 )
-
-[node name="Ground47" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 6240, 1827 )
-scale = Vector2( 2.88, 3.533 )
-
-[node name="Ground48" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 6304, 1768 )
-scale = Vector2( 2.88, 3.533 )
-
-[node name="Ground49" parent="collisions" instance=ExtResource( 28 )]
-position = Vector2( 6368, 1705 )
-scale = Vector2( 2.88, 3.533 )
 
 [node name="Ground50" parent="collisions" instance=ExtResource( 28 )]
 position = Vector2( 6560, 1641 )
@@ -796,6 +773,46 @@ scale = Vector2( 3.51998, 0.84 )
 [node name="Ground58" parent="collisions" instance=ExtResource( 28 )]
 position = Vector2( 2351, 267 )
 scale = Vector2( 1.593, 0.263 )
+
+[node name="Ground59" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 6497, 1892 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground60" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 6433, 2018 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground61" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 6369, 2084 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground62" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 6303, 2145 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground63" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 6239, 2213 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground64" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 5966, 2271 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground65" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 5536, 2210 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground66" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 5471, 2150 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground67" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 5407, 2086 )
+scale = Vector2( 2.88, 3.533 )
+
+[node name="Ground68" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 5344, 2021 )
+scale = Vector2( 2.88, 3.533 )
 
 [node name="statechangers" type="Node2D" parent="."]
 visible = false

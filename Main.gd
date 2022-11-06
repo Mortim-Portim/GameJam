@@ -84,7 +84,7 @@ func _on_level_finished(state):
 	load_level(state)
 
 func ending():
-	var level_nr = 0
+	level_nr = 0
 	in_game = false
 	$CanvasLayer/TextureRect.visible = true
 	$AnimationPlayer.play("End")

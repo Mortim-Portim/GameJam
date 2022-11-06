@@ -717,6 +717,7 @@ scale = Vector2( 0.787102, 0.787102 )
 
 [node name="Erlenmeyerkolben" parent="." instance=ExtResource( 36 )]
 position = Vector2( 2749, 977 )
+player_path = NodePath("../Player")
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

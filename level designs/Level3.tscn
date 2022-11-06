@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/level/Under block.png" type="Texture" id=15]
 [ext_resource path="res://assets/level/decke 2.png" type="Texture" id=16]
 [ext_resource path="res://assets/level/neenwand rechts.png" type="Texture" id=17]
-[ext_resource path="res://Erlenmeyerkolben.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/background/Wasser zu Eis generator.png" type="Texture" id=18]
 [ext_resource path="res://assets/level/wand links.png" type="Texture" id=19]
 [ext_resource path="res://assets/level/Block 1.png" type="Texture" id=20]
 [ext_resource path="res://Fackel.tscn" type="PackedScene" id=21]
@@ -43,6 +43,8 @@
 [ext_resource path="res://assets/background/Moos.png" type="Texture" id=41]
 [ext_resource path="res://assets/background/box2.jpg" type="Texture" id=42]
 [ext_resource path="res://WaterLake.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Freezer.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Erlenmeyerkolben.tscn" type="PackedScene" id=45]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -878,7 +880,7 @@ position = Vector2( -684, -126 )
 position = Vector2( 5028, -535 )
 stalagtit_path = NodePath("../Stalagtite")
 
-[node name="Erlenmeyerkolben" parent="." instance=ExtResource( 18 )]
+[node name="Erlenmeyerkolben" parent="." instance=ExtResource( 45 )]
 position = Vector2( 2342, 178 )
 scale = Vector2( 0.787772, 0.787772 )
 player_path = NodePath("../Player")
@@ -890,6 +892,63 @@ position = Vector2( 176, 542 )
 position = Vector2( 5880, 1939 )
 scale = Vector2( 4.358, 1.85281 )
 z_index = -2
+
+[node name="freezer" type="Node2D" parent="."]
+
+[node name="Freezer" parent="freezer" instance=ExtResource( 44 )]
+position = Vector2( 1238, 1391 )
+rotation = -2.09439
+scale = Vector2( 1.29297, 1.97999 )
+
+[node name="Freezer2" parent="freezer" instance=ExtResource( 44 )]
+position = Vector2( 680, 1384 )
+rotation = -1.0472
+scale = Vector2( 1.29297, 1.97999 )
+
+[node name="WasserZuEisGenerator" type="Sprite" parent="freezer"]
+position = Vector2( 694, 1338 )
+rotation = -0.927842
+scale = Vector2( 0.0724139, 0.0789331 )
+texture = ExtResource( 18 )
+
+[node name="WasserZuEisGenerator2" type="Sprite" parent="freezer"]
+position = Vector2( 1216, 1342 )
+rotation = -2.31682
+scale = Vector2( 0.0724139, 0.0789331 )
+texture = ExtResource( 18 )
+
+[node name="Freezer3" parent="freezer" instance=ExtResource( 44 )]
+position = Vector2( 1536, 1392 )
+rotation = -1.06466
+scale = Vector2( 1.28167, 1.52227 )
+
+[node name="WasserZuEisGenerator3" type="Sprite" parent="freezer"]
+position = Vector2( 1553, 1359 )
+rotation = -1.0444
+scale = Vector2( 0.0724139, 0.0789331 )
+texture = ExtResource( 18 )
+
+[node name="Freezer4" parent="freezer" instance=ExtResource( 44 )]
+position = Vector2( 2316, 1537 )
+rotation = -2.00474
+scale = Vector2( 1.28167, 1.52227 )
+
+[node name="WasserZuEisGenerator4" type="Sprite" parent="freezer"]
+position = Vector2( 2288.82, 1488.39 )
+rotation = -1.98448
+scale = Vector2( 0.0724139, 0.0789331 )
+texture = ExtResource( 18 )
+
+[node name="Freezer5" parent="freezer" instance=ExtResource( 44 )]
+position = Vector2( 2670, 1466 )
+rotation = -1.39071
+scale = Vector2( 1.1445, 1.64268 )
+
+[node name="WasserZuEisGenerator5" type="Sprite" parent="freezer"]
+position = Vector2( 2677.59, 1405.93 )
+rotation = -1.42751
+scale = Vector2( 0.0724139, 0.0789331 )
+texture = ExtResource( 18 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

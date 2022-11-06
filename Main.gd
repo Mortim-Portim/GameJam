@@ -24,7 +24,7 @@ func _on_Play_pressed():
 
 func add_world_to_scene(lvl):
 	$PostProcessorPortRenderer.assign_world(lvl)
-func rem_world_from_scene(lvl):
+func rem_world_from_scene(_lvl):
 	pass
 
 func load_level(state):
@@ -69,11 +69,11 @@ func _on_TextureButton_pressed():
 	fade($MainMenuSoundtrack, $InGameSoundtrack)
 
 func _on_level_reload(state, lastCheck):
-	call_deferred("rem_world_from_scene", get_node("Level"+String(level_nr)))
+	#call_deferred("rem_world_from_scene", get_node("Level"+String(level_nr)))
 	reload_level(state, lastCheck)
 
 func _on_level_finished(state):
-	rem_world_from_scene(get_node("Level"+String(level_nr)))
+	#rem_world_from_scene(get_node("Level"+String(level_nr)))
 	level_nr += 1
 	load_level(state)
 

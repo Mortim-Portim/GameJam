@@ -141,6 +141,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -198,6 +199,12 @@ cast_to = Vector2( 0, -21 )
 position = Vector2( 25, -80 )
 enabled = true
 cast_to = Vector2( 0, -21 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

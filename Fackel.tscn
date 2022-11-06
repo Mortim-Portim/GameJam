@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/light.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/f1.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/f2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Fackel" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 26, 57 )
+scale = Vector2( 0.12, 0.12 )
+frames = SubResource( 10 )
+playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -5, -47 )
+texture = ExtResource( 2 )
+color = Color( 1, 0.360784, 0.137255, 1 )
+energy = 1.21
+shadow_enabled = true
+shadow_gradient_length = 5.0

@@ -14,6 +14,7 @@ ssao_radius = 45.24
 ssao_intensity = 128.0
 dof_blur_near_distance = 279.31
 glow_enabled = true
+glow_intensity = 0.33
 glow_blend_mode = 1
 glow_hdr_threshold = 0.28
 glow_hdr_scale = 1.61

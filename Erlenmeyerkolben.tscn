@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/mp3s/Glass-Death-Sound.mp3" type="AudioStream" id=1]
 [ext_resource path="res://assets/mp3s/Lauf-Sound-Schwamm-Loopable.mp3" type="AudioStream" id=2]
@@ -8,21 +8,22 @@
 [ext_resource path="res://assets/anims/Kolben_walk_/Unbenanntes_Projekt-2.png" type="Texture" id=6]
 [ext_resource path="res://assets/anims/Kolben_walk_/Unbenanntes_Projekt-3.png" type="Texture" id=7]
 [ext_resource path="res://assets/anims/Kolben_walk_/Unbenanntes_Projekt-1.png" type="Texture" id=8]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-4.png" type="Texture" id=9]
+[ext_resource path="res://Erlenmeyerkolben.gd" type="Script" id=9]
 [ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-1.png" type="Texture" id=10]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-6.png" type="Texture" id=11]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-7.png" type="Texture" id=12]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-5.png" type="Texture" id=13]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-10.png" type="Texture" id=14]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-9.png" type="Texture" id=15]
-[ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-8.png" type="Texture" id=16]
+[ext_resource path="res://assets/anims/Suck_/Unbenanntes_Projekt-2.png" type="Texture" id=11]
+[ext_resource path="res://assets/anims/Suck_/Unbenanntes_Projekt-1.png" type="Texture" id=12]
+[ext_resource path="res://assets/anims/Suck_/Unbenanntes_Projekt-3.png" type="Texture" id=13]
 [ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-2.png" type="Texture" id=17]
 [ext_resource path="res://assets/anims/Kolben_suck_/Unbenanntes_Projekt-3.png" type="Texture" id=18]
 [ext_resource path="res://assets/mp3s/Flasche-Einsaug-Sound.mp3" type="AudioStream" id=19]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 42.0
-height = 128.0
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -36,25 +37,274 @@ animations = [ {
 "name": "running",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 14 ) ],
-"loop": true,
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 10 ) ],
+"loop": false,
 "name": "sucking",
-"speed": 5.0
+"speed": 2.0
 } ]
 
-[node name="Erlenmeyerkolben" type="KinematicBody2D"]
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sucker:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sucker:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sucker:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "sucking" ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimatedSprite:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -43 )
-shape = SubResource( 1 )
+[sub_resource type="Animation" id=4]
+resource_name = "TopLeft"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sucker:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, 0, 0, 0, 0, -115, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sucker:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -43, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sucker:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -110, -0.25, 0, 0.25, 0, -110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimatedSprite:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "sucking", "sucking" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimatedSprite:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "TopRight"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sucker:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, 0, 0, 0, 0, 115, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Sucker:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 43, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Sucker:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -110, -0.25, 0, 0.25, 0, -110, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimatedSprite:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "sucking", "sucking" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimatedSprite:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 150, 100 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100, 302 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 100, 300 )
+
+[node name="Erlenmeyerkolben" type="KinematicBody2D"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -52, 41, -26, 64, 7, 66, 44, 48, 48, 33, 19, -16, 21, -78, 13, -110, -18, -110, -27, -74, -24, -16, -51, 24 )
+
+[node name="Sucker" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -110 )
+scale = Vector2( 0.139648, 0.139648 )
+frames = SubResource( 3 )
+frame = 2
+playing = true
+offset = Vector2( 50, -1000 )
+
+[node name="Area2D" type="Area2D" parent="Sucker" groups=["Sucker"]]
+collision_layer = 256
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sucker/Area2D"]
+polygon = PoolVector2Array( -272.112, -544.224, -494.098, -1303.27, -637.315, -1661.31, 744.727, -1661.31, 537.063, -1317.59, 350.881, -909.427, 200.503, -279.273, -221.986, -264.951 )
+disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2, -46 )
 scale = Vector2( 0.113098, 0.113098 )
 frames = SubResource( 2 )
 animation = "sucking"
-frame = 6
-playing = true
 
 [node name="Right" type="RayCast2D" parent="."]
 enabled = true
@@ -90,3 +340,49 @@ volume_db = 15.0
 [node name="Sucking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
 volume_db = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/RESET = SubResource( 7 )
+anims/TopLeft = SubResource( 4 )
+anims/TopRight = SubResource( 5 )
+
+[node name="LeftIsPlayer" type="Area2D" parent="."]
+position = Vector2( -198, 28 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftIsPlayer"]
+shape = SubResource( 8 )
+
+[node name="RightIsPlayer" type="Area2D" parent="."]
+position = Vector2( 184, 23 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightIsPlayer"]
+shape = SubResource( 8 )
+
+[node name="GasFall" type="Area2D" parent="." groups=["GasFall"]]
+position = Vector2( 0, -234 )
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GasFall"]
+position = Vector2( 0, -202 )
+shape = SubResource( 1 )
+
+[node name="TopIsPlayer" type="Area2D" parent="."]
+position = Vector2( 0, -234 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopIsPlayer"]
+position = Vector2( 0, -203 )
+shape = SubResource( 9 )
+
+[connection signal="finished" from="Death" to="." method="_on_Death_finished"]

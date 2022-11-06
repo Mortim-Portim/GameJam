@@ -205,7 +205,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -239,7 +239,7 @@ stream = ExtResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Player"]]
 collision_layer = 2
-collision_mask = 52
+collision_mask = 4404
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 0, -48 )
@@ -287,10 +287,10 @@ anchor_left = 0.504
 anchor_top = 1.0
 anchor_right = 0.504
 anchor_bottom = 1.0
-margin_left = -35.0
-margin_top = -98.0
-margin_right = 35.0
-margin_bottom = -27.9999
+margin_left = 28.0
+margin_top = 337.0
+margin_right = 98.0
+margin_bottom = 407.0
 rect_pivot_offset = Vector2( 35, 35 )
 texture = ExtResource( 38 )
 expand = true
@@ -303,4 +303,5 @@ anims/RESET = SubResource( 12 )
 anims/WaterGas = SubResource( 15 )
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_Hitbox_area_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

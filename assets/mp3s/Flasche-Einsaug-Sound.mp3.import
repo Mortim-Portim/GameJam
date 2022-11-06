@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Flasche-Einsaug-Sound.mp3-d6a7e14d771c1b01f9dee1f7fc
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

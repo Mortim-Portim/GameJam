@@ -7,15 +7,18 @@ export var GRAVITY = 900
 export var levitation_gas_force = 150
 export var levitation_gas_max_speed = 200
 export var MAX_SPEED = 400
+export var MAX_ICE_SPEED = 600
 export var JUMP_SPEED = 600
 export var ACCEL = 10
 export var DEACCEL= 40
 export var Ice_Deaccel = 0.001
 export var Ice_Accel = 40
 export var max_time_in_ice_form = 10
+export var gas_fall_vel_max = 400
 
 var temps =  [159, 337, 12]
 
+var gas_is_sucked = false
 var sprites = []
 var state = 0
 var currentSprite = AnimatedSprite.new()
@@ -123,13 +126,20 @@ func process_input(delta):
 
 func process_movement(delta):
 	if state == 2:
-		vel.y -= delta * levitation_gas_force
-		if vel.y < -levitation_gas_max_speed:
-			vel.y = -levitation_gas_max_speed
+		if gas_is_sucked:
+			vel.y += delta * GRAVITY
+			if vel.y > gas_fall_vel_max:
+				vel.y = gas_fall_vel_max
+		else:
+			vel.y -= delta * levitation_gas_force
+			if vel.y < -levitation_gas_max_speed:
+				vel.y = -levitation_gas_max_speed
 	else:
 		vel.y += delta * GRAVITY
 	
 	var target_vel = dir*MAX_SPEED
+	if state == 1:
+		target_vel = dir*MAX_ICE_SPEED
 	target_vel.y = vel.y
 	
 	var accel = ACCEL
@@ -186,6 +196,15 @@ func _on_Hitbox_area_entered(area):
 		to_ice()
 	if grps.has("2") and state != 2:
 		to_gas()
+	if grps.has("Sucker") and state != 1:
+		print("sucked")
+	if grps.has("GasFall") and state == 2:
+		gas_is_sucked = true
+
+func _on_Hitbox_area_exited(area):
+	var grps = area.get_groups()
+	if grps.has("GasFall"):
+		gas_is_sucked = false
 
 func to_water(play_anim=true):
 	if play_anim:

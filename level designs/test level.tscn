@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/level/Block 2.png" type="Texture" id=1]
 [ext_resource path="res://assets/level/Under block 2.png" type="Texture" id=2]
@@ -35,7 +35,6 @@
 [ext_resource path="res://assets/background/h3.png" type="Texture" id=33]
 [ext_resource path="res://Lochlein.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Schwamm.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Erlenmeyerkolben.tscn" type="PackedScene" id=36]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -587,7 +586,7 @@ position = Vector2( 4701, 1508 )
 scale = Vector2( 1.63, 1 )
 
 [node name="Spawn" type="Position2D" parent="."]
-position = Vector2( 215, 650 )
+position = Vector2( 205, 477 )
 
 [node name="CaveSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )
@@ -715,9 +714,8 @@ player_path = NodePath("../Player")
 position = Vector2( 2521, 860 )
 scale = Vector2( 0.787102, 0.787102 )
 
-[node name="Erlenmeyerkolben" parent="." instance=ExtResource( 36 )]
-position = Vector2( 2749, 977 )
-player_path = NodePath("../Player")
+[node name="StateChanger" parent="." instance=ExtResource( 19 )]
+position = Vector2( 204, 478 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

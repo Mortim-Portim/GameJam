@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://assets/background/Stei2.png" type="Texture" id=39]
 [ext_resource path="res://assets/background/Stei1.png" type="Texture" id=40]
 [ext_resource path="res://assets/background/Moos.png" type="Texture" id=41]
+[ext_resource path="res://assets/background/box2.jpg" type="Texture" id=42]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -278,7 +279,7 @@ scale = Vector2( 0.111072, 0.111072 )
 texture = ExtResource( 25 )
 
 [node name="Lochlein" parent="." instance=ExtResource( 27 )]
-position = Vector2( 2142, 616 )
+position = Vector2( 1854, 573 )
 scale = Vector2( 0.582065, 0.582065 )
 z_index = -10
 
@@ -294,6 +295,11 @@ texture = ExtResource( 23 )
 position = Vector2( 2644, 925 )
 scale = Vector2( 0.103723, 0.103723 )
 z_index = -4
+texture = ExtResource( 23 )
+
+[node name="H2" type="Sprite" parent="platformen"]
+position = Vector2( 2384, 265 )
+scale = Vector2( 0.121985, 0.121985 )
 texture = ExtResource( 23 )
 
 [node name="deko" type="Node2D" parent="."]
@@ -434,9 +440,9 @@ scale = Vector2( 0.0328062, -0.0373142 )
 texture = ExtResource( 35 )
 
 [node name="R6" type="Sprite" parent="deko"]
-position = Vector2( 1263, 2273 )
-rotation = -1.31023
-scale = Vector2( 0.0455383, 0.0453045 )
+position = Vector2( 1265, 2274 )
+rotation = -1.4391
+scale = Vector2( 0.0430879, 0.0400854 )
 texture = ExtResource( 35 )
 
 [node name="Stei1" type="Sprite" parent="deko"]
@@ -517,8 +523,47 @@ position = Vector2( 1102, 2221 )
 scale = Vector2( 0.380963, 0.380963 )
 z_index = -1
 
+[node name="H14" type="Sprite" parent="deko"]
+position = Vector2( 2694, 258 )
+rotation = -0.368507
+scale = Vector2( 0.165914, 0.150014 )
+z_index = -4
+texture = ExtResource( 26 )
+
+[node name="H15" type="Sprite" parent="deko"]
+position = Vector2( 2801, 533 )
+rotation = -0.368507
+scale = Vector2( 0.165914, 0.150014 )
+z_index = -6
+texture = ExtResource( 26 )
+
+[node name="H16" type="Sprite" parent="deko"]
+position = Vector2( 2925, 856 )
+rotation = -0.368507
+scale = Vector2( 0.165914, 0.207651 )
+z_index = -6
+texture = ExtResource( 26 )
+
+[node name="H17" type="Sprite" parent="deko"]
+position = Vector2( 3045, 1160 )
+rotation = -0.368507
+scale = Vector2( 0.165914, 0.150014 )
+z_index = -6
+texture = ExtResource( 26 )
+
+[node name="Box2" type="Sprite" parent="deko"]
+position = Vector2( 3114, 969 )
+scale = Vector2( 0.046748, 0.046748 )
+z_index = -1
+texture = ExtResource( 42 )
+
+[node name="Box3" type="Sprite" parent="deko"]
+position = Vector2( 3057, 995 )
+scale = Vector2( 0.0326785, 0.0326785 )
+z_index = -1
+texture = ExtResource( 42 )
+
 [node name="collisions" type="Node2D" parent="."]
-visible = false
 
 [node name="Ground" parent="collisions" instance=ExtResource( 28 )]
 position = Vector2( -107, 933 )
@@ -748,6 +793,10 @@ scale = Vector2( 2.88, 3.533 )
 position = Vector2( 5215, 1437 )
 scale = Vector2( 3.51998, 0.84 )
 
+[node name="Ground58" parent="collisions" instance=ExtResource( 28 )]
+position = Vector2( 2351, 267 )
+scale = Vector2( 1.593, 0.263 )
+
 [node name="statechangers" type="Node2D" parent="."]
 visible = false
 
@@ -768,14 +817,34 @@ position = Vector2( 3081, -440 )
 scale = Vector2( 12.2377, 1 )
 
 [node name="StateChanger5" parent="statechangers" instance=ExtResource( 22 )]
-position = Vector2( 1542, 1019 )
-scale = Vector2( 1.02652, 3.85 )
+position = Vector2( 958, 1037 )
+scale = Vector2( 3.42652, 11.33 )
 state = 1
 
 [node name="StateChanger6" parent="statechangers" instance=ExtResource( 22 )]
-position = Vector2( 2142, 608 )
+position = Vector2( 1851, 573 )
 scale = Vector2( 1.00085, 1.00085 )
 state = 2
+
+[node name="StateChanger7" parent="statechangers" instance=ExtResource( 22 )]
+position = Vector2( 1696, 1384 )
+scale = Vector2( 1.62652, 11.33 )
+state = 1
+
+[node name="StateChanger8" parent="statechangers" instance=ExtResource( 22 )]
+position = Vector2( 2142, 1350 )
+scale = Vector2( 1.62652, 8.29 )
+state = 1
+
+[node name="StateChanger9" parent="statechangers" instance=ExtResource( 22 )]
+position = Vector2( 2786, 1418 )
+scale = Vector2( 1.62652, 11.33 )
+state = 1
+
+[node name="StateChanger10" parent="statechangers" instance=ExtResource( 22 )]
+position = Vector2( 3600, 1550 )
+scale = Vector2( 7.42652, 15.13 )
+state = 1
 
 [node name="Killer" parent="." instance=ExtResource( 30 )]
 position = Vector2( 2776, 2865 )
@@ -789,8 +858,12 @@ position = Vector2( 5028, -535 )
 stalagtit_path = NodePath("../Stalagtite")
 
 [node name="Erlenmeyerkolben" parent="." instance=ExtResource( 18 )]
-position = Vector2( 2476, 521 )
-scale = Vector2( 0.57759, 0.57759 )
+position = Vector2( 2342, 178 )
+scale = Vector2( 0.787772, 0.787772 )
+player_path = NodePath("../Player")
+
+[node name="StateChanger" parent="." instance=ExtResource( 22 )]
+position = Vector2( 176, 542 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

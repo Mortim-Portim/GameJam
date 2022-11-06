@@ -197,7 +197,7 @@ func _on_Hitbox_area_entered(area):
 	if grps.has("2") and state != 2:
 		to_gas()
 	if grps.has("Sucker") and state != 1:
-		print("sucked")
+		kill()
 	if grps.has("GasFall") and state == 2:
 		gas_is_sucked = true
 

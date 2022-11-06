@@ -77,8 +77,8 @@ func start_idle():
 		$AnimatedSprite.play("idle")
 func start_running():
 	print("start_running")
-	$Running.play()
 	if !sucking:
+		$Running.play()
 		$AnimatedSprite.play("running")
 func change_dir(ndir):
 	if dir == ndir or ndir.is_equal_approx(Vector2.ZERO):
@@ -89,6 +89,7 @@ func change_dir(ndir):
 
 func start_suck():
 	print("start_suck")
+	$Sucking.play()
 	$AnimatedSprite.play("sucking")
 	$AnimatedSprite.playing = false
 	$Sucker.visible = true
@@ -96,6 +97,7 @@ func start_suck():
 	
 func stop_suck():
 	print("stop_suck")
+	$Sucking.stop()
 	$Sucker.visible = false
 	$Sucker/Area2D/CollisionPolygon2D.disabled = true
 
@@ -123,3 +125,8 @@ func change_sucking_pos(p):
 			elif p == 1:
 				$AnimationPlayer.play_backwards("TopRight")
 		sucking_pos = p
+	else:
+		if p == 1:
+			$AnimatedSprite.frame=0
+		else:
+			$AnimatedSprite.frame=2

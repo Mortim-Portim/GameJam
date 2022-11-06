@@ -870,6 +870,9 @@ scale = Vector2( 296.059, 4.65933 )
 [node name="Stalagtite" parent="." instance=ExtResource( 31 )]
 position = Vector2( 5037, -538 )
 
+[node name="RayCast2D" parent="Stalagtite" index="1"]
+position = Vector2( -684, -126 )
+
 [node name="Rieseler" parent="." instance=ExtResource( 32 )]
 position = Vector2( 5028, -535 )
 stalagtit_path = NodePath("../Stalagtite")
@@ -884,3 +887,5 @@ position = Vector2( 176, 542 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]
+
+[editable path="Stalagtite"]

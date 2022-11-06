@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/level/Under block.png" type="Texture" id=15]
 [ext_resource path="res://assets/level/decke 2.png" type="Texture" id=16]
 [ext_resource path="res://assets/level/neenwand rechts.png" type="Texture" id=17]
+[ext_resource path="res://Erlenmeyerkolben.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/level/wand links.png" type="Texture" id=19]
 [ext_resource path="res://assets/level/Block 1.png" type="Texture" id=20]
 [ext_resource path="res://Fackel.tscn" type="PackedScene" id=21]
@@ -786,6 +787,10 @@ position = Vector2( 5037, -538 )
 [node name="Rieseler" parent="." instance=ExtResource( 32 )]
 position = Vector2( 5028, -535 )
 stalagtit_path = NodePath("../Stalagtite")
+
+[node name="Erlenmeyerkolben" parent="." instance=ExtResource( 18 )]
+position = Vector2( 2750, -283 )
+scale = Vector2( 0.443002, 0.443002 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

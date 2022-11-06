@@ -789,8 +789,8 @@ position = Vector2( 5028, -535 )
 stalagtit_path = NodePath("../Stalagtite")
 
 [node name="Erlenmeyerkolben" parent="." instance=ExtResource( 18 )]
-position = Vector2( 2750, -283 )
-scale = Vector2( 0.443002, 0.443002 )
+position = Vector2( 2476, 521 )
+scale = Vector2( 0.57759, 0.57759 )
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

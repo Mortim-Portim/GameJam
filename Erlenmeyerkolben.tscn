@@ -284,6 +284,7 @@ script = ExtResource( 9 )
 polygon = PoolVector2Array( -52, 41, -26, 64, 7, 66, 44, 48, 48, 33, 19, -16, 21, -78, 13, -110, -18, -110, -27, -74, -24, -16, -51, 24 )
 
 [node name="Sucker" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 0, -110 )
 scale = Vector2( 0.139648, 0.139648 )
 frames = SubResource( 3 )

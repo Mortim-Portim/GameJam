@@ -232,7 +232,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -247,6 +247,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 10 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="."]
@@ -313,10 +314,10 @@ anchor_left = 0.504
 anchor_top = 1.0
 anchor_right = 0.504
 anchor_bottom = 1.0
-margin_left = -35.0
-margin_top = -98.0
-margin_right = 35.0
-margin_bottom = -28.0
+margin_left = 28.0
+margin_top = 337.0
+margin_right = 98.0
+margin_bottom = 407.0
 rect_pivot_offset = Vector2( 35, 35 )
 texture = ExtResource( 38 )
 expand = true

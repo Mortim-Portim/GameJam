@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anims/Idle_Eis/Unbenanntes_Projekt-3.png" type="Texture" id=2]
@@ -38,6 +38,17 @@
 [ext_resource path="res://assets/mp3s/In-Wasser.mp3" type="AudioStream" id=36]
 [ext_resource path="res://assets/GUI/temometa2.png" type="Texture" id=37]
 [ext_resource path="res://assets/GUI/temometa1.png" type="Texture" id=38]
+[ext_resource path="res://assets/anims/Water_ded_/Unbenanntes_Projekt-2.png" type="Texture" id=39]
+[ext_resource path="res://assets/anims/Water_ded_/Unbenanntes_Projekt-3.png" type="Texture" id=40]
+[ext_resource path="res://assets/anims/Water_ded_/Unbenanntes_Projekt-1.png" type="Texture" id=41]
+[ext_resource path="res://assets/anims/Water_ded_/Unbenanntes_Projekt-4.png" type="Texture" id=42]
+[ext_resource path="res://assets/anims/Luft_ded_/Unbenanntes_Projekt-1.png" type="Texture" id=43]
+[ext_resource path="res://assets/anims/Luft_ded_/Unbenanntes_Projekt-4.png" type="Texture" id=44]
+[ext_resource path="res://assets/anims/Luft_ded_/Unbenanntes_Projekt-3.png" type="Texture" id=45]
+[ext_resource path="res://assets/anims/Luft_ded_/Unbenanntes_Projekt-2.png" type="Texture" id=46]
+[ext_resource path="res://assets/anims/Eis_ded_/Unbenanntes_Projekt-2.png" type="Texture" id=47]
+[ext_resource path="res://assets/anims/Eis_ded_/Unbenanntes_Projekt-3.png" type="Texture" id=48]
+[ext_resource path="res://assets/anims/Eis_ded_/Unbenanntes_Projekt-1.png" type="Texture" id=49]
 [ext_resource path="res://assets/mp3s/Death-Sound.mp3" type="AudioStream" id=50]
 
 [sub_resource type="CircleShape2D" id=7]
@@ -45,6 +56,11 @@ radius = 45.0111
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
+"frames": [ ExtResource( 41 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "death",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
@@ -63,6 +79,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ ExtResource( 49 ), ExtResource( 47 ), ExtResource( 48 ) ],
+"loop": false,
+"name": "death",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle",
@@ -81,6 +102,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
+"frames": [ ExtResource( 43 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 44 ) ],
+"loop": false,
+"name": "death",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "idle",
@@ -206,6 +232,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 8 )
 animation = "idle"
+frame = 2
 playing = true
 
 [node name="IceSprite" type="AnimatedSprite" parent="."]
@@ -220,7 +247,7 @@ position = Vector2( 0, -41 )
 scale = Vector2( 0.0847168, 0.0847168 )
 frames = SubResource( 10 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="."]
@@ -287,10 +314,10 @@ anchor_left = 0.504
 anchor_top = 1.0
 anchor_right = 0.504
 anchor_bottom = 1.0
-margin_left = 28.0
-margin_top = 337.0
-margin_right = 98.0
-margin_bottom = 407.0
+margin_left = -35.0
+margin_top = -98.0
+margin_right = 35.0
+margin_bottom = -28.0
 rect_pivot_offset = Vector2( 35, 35 )
 texture = ExtResource( 38 )
 expand = true

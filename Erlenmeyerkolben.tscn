@@ -288,7 +288,7 @@ visible = false
 position = Vector2( 0, -110 )
 scale = Vector2( 0.139648, 0.139648 )
 frames = SubResource( 3 )
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 50, -1000 )
 
@@ -340,7 +340,7 @@ volume_db = 15.0
 
 [node name="Sucking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
-volume_db = 15.0
+volume_db = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.0

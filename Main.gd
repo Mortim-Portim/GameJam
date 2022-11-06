@@ -81,6 +81,7 @@ func _on_level_finished(state):
 	#rem_world_from_scene(get_node("Level"+String(level_nr)))
 	level_nr += 1
 	if level_nr >= max_lvl:
+		pass
 	load_level(state)
 
 onready var tween_fade = get_node("Fade")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://assets/background/Stei1.png" type="Texture" id=40]
 [ext_resource path="res://assets/background/Moos.png" type="Texture" id=41]
 [ext_resource path="res://assets/background/box2.jpg" type="Texture" id=42]
+[ext_resource path="res://WaterLake.tscn" type="PackedScene" id=43]
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 32, 96, 32, 96, 128, 160, 224, 64, 256, 128, 320, 64, 384, 192, 416, 160, 448, 192, 576, 32, 608, 128, 672, 64, 672, 672, 672, 64, 672, 672, 544, 1280, 480, 896, 384, 1824, 160, 640, 96, 960, 32, 512, 0, 192 )
@@ -884,6 +885,11 @@ player_path = NodePath("../Player")
 
 [node name="StateChanger" parent="." instance=ExtResource( 22 )]
 position = Vector2( 176, 542 )
+
+[node name="WaterLake" parent="." instance=ExtResource( 43 )]
+position = Vector2( 5880, 1939 )
+scale = Vector2( 4.358, 1.85281 )
+z_index = -2
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

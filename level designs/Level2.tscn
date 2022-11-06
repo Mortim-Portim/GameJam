@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://BasicLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Schwamm.tscn" type="PackedScene" id=33]
 [ext_resource path="res://assets/background/box2.jpg" type="Texture" id=34]
 [ext_resource path="res://Lampe.tscn" type="PackedScene" id=35]
+[ext_resource path="res://WaterLake.tscn" type="PackedScene" id=36]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -765,6 +766,11 @@ player_path = NodePath("../Player")
 
 [node name="StateChanger2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 272, 477 )
+
+[node name="WaterLake" parent="." instance=ExtResource( 36 )]
+position = Vector2( 7935, 6514 )
+scale = Vector2( 2.36, 3 )
+z_index = -1
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]
 [connection signal="finished" from="Goal" to="." method="_on_Goal_finished"]

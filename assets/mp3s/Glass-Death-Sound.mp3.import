@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Glass-Death-Sound.mp3-12e4661ba63dfd228800a55caa9ffa
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

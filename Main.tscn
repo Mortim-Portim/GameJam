@@ -259,6 +259,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -266,7 +267,6 @@ position = Vector2( 960, 540 )
 texture = ExtResource( 7 )
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/MMenu/MainScreen2"]
-visible = false
 margin_left = 96.0
 margin_top = -270.0
 margin_right = 240.0
@@ -317,7 +317,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]

@@ -19,7 +19,7 @@ animations = [ {
 position = Vector2( 237, 22 )
 scale = Vector2( 0.178223, 0.178223 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="WasserZuEisGenerator" type="Sprite" parent="."]

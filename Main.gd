@@ -51,7 +51,8 @@ func _on_Settings_pressed():
 	$CanvasLayer/SettingsMenu.visible = true
 
 func _on_Credits_pressed():
-	pass
+	$CanvasLayer/MMenu.visible = false
+	$CanvasLayer/CreditsMenu.visible = true
 
 func _on_BackToMenu_pressed():
 	$CanvasLayer/MMenu.visible = true

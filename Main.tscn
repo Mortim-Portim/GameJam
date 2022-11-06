@@ -56,13 +56,14 @@ script = ExtResource( 2 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MMenu" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/MMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 1 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="MainScreen2" type="Sprite" parent="CanvasLayer/MMenu"]
@@ -120,6 +121,7 @@ anchor_bottom = 1.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/SettingsMenu"]
 position = Vector2( 960, 540 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="SettingsMenu" type="Sprite" parent="CanvasLayer/SettingsMenu"]
@@ -150,6 +152,14 @@ margin_right = 96.5
 margin_bottom = 506.5
 texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 24 )
+
+[node name="CreditsMenu" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VideoPlayer" type="VideoPlayer" parent="CanvasLayer/CreditsMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="MainMenuSoundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )

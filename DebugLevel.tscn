@@ -8,12 +8,12 @@
 [ext_resource path="res://assets/mp3s/Background-Water-Drops.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/mp3s/Death-Sound.mp3" type="AudioStream" id=7]
 [ext_resource path="res://CheckPoint.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Killer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stalagtite.tscn" type="PackedScene" id=10]
 [ext_resource path="res://StateChanger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Rieseler.tscn" type="PackedScene" id=12]
 [ext_resource path="res://WaterTPer.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Schwamm.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Erlenmeyerkolben.tscn" type="PackedScene" id=15]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource( 4 )
@@ -42,13 +42,10 @@ scale = Vector2( 60, 1 )
 position = Vector2( 2980, 24 )
 
 [node name="CheckPoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1510, 14 )
-
-[node name="Killer" parent="." instance=ExtResource( 9 )]
-position = Vector2( 337, 67 )
+position = Vector2( -109, -361 )
 
 [node name="Stalagtite" parent="." instance=ExtResource( 10 )]
-position = Vector2( 879, -622 )
+position = Vector2( 2270, -616 )
 
 [node name="Rieseler" parent="." instance=ExtResource( 12 )]
 position = Vector2( 879, -755 )
@@ -70,6 +67,10 @@ position = Vector2( -617, 142 )
 
 [node name="Schwamm" parent="." instance=ExtResource( 14 )]
 position = Vector2( -2494, 4 )
+player_path = NodePath("../Player")
+
+[node name="Erlenmeyerkolben" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1426, 61 )
 player_path = NodePath("../Player")
 
 [connection signal="killed" from="Player" to="." method="_on_Player_killed"]

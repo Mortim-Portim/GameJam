@@ -18,10 +18,8 @@ func _ready():
 	_on_HSlider_value_changed(90)
 
 func _on_Play_pressed():
-	load_level(0)
-	in_game = true
-	$CanvasLayer/MMenu.visible = false
-	fade($MainMenuSoundtrack, $InGameSoundtrack)
+	$CanvasLayer/TextureRect2.visible = true
+	$AnimationPlayer2.play("Start")
 
 func add_world_to_scene(lvl):
 	$PostProcessorPortRenderer.assign_world(lvl)
@@ -81,8 +79,15 @@ func _on_level_finished(state):
 	#rem_world_from_scene(get_node("Level"+String(level_nr)))
 	level_nr += 1
 	if level_nr >= max_lvl:
-		pass
+		ending()
+		return
 	load_level(state)
+
+func ending():
+	level_nr = 0
+	in_game = false
+	$CanvasLayer/TextureRect.visible = true
+	$AnimationPlayer.play("End")
 
 onready var tween_fade = get_node("Fade")
 export var transition_duration = 0.5
@@ -116,3 +121,15 @@ func _on_HSlider_value_changed(value):
 
 func _on_VideoPlayer_finished():
 	_on_BackToMenu_pressed()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	_on_Credits_pressed()
+	$CanvasLayer/TextureRect.visible = false
+
+func _on_AnimationPlayer2_animation_finished(anim_name):
+	$CanvasLayer/TextureRect2.visible = false
+	load_level(0)
+	in_game = true
+	$CanvasLayer/MMenu.visible = false
+	fade($MainMenuSoundtrack, $InGameSoundtrack)

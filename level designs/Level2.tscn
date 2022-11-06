@@ -714,6 +714,7 @@ texture = ExtResource( 34 )
 
 [node name="Lampe" parent="deko2" instance=ExtResource( 35 )]
 position = Vector2( 2720, 3849 )
+z_index = -4
 
 [node name="Lampe2" parent="deko2" instance=ExtResource( 35 )]
 position = Vector2( 3679, 4072 )
